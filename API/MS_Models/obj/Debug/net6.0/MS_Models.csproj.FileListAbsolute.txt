@@ -34,3 +34,15 @@ D:\Hammas\Management-System\API\MS_Models\obj\Debug\net6.0\MS_Models.dll
 D:\Hammas\Management-System\API\MS_Models\obj\Debug\net6.0\refint\MS_Models.dll
 D:\Hammas\Management-System\API\MS_Models\obj\Debug\net6.0\MS_Models.pdb
 D:\Hammas\Management-System\API\MS_Models\obj\Debug\net6.0\ref\MS_Models.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\bin\Debug\net6.0\MS_Models.deps.json
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\bin\Debug\net6.0\MS_Models.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\bin\Debug\net6.0\MS_Models.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.csproj.AssemblyReference.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.AssemblyInfoInputs.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.AssemblyInfo.cs
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\refint\MS_Models.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\MS_Models.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Models\obj\Debug\net6.0\ref\MS_Models.dll

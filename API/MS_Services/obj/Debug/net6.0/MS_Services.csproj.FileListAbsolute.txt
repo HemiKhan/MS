@@ -49,3 +49,20 @@ D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.dll
 D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
 D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
 D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Services.deps.json
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Services.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Services.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Data.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Models.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Data.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\bin\Debug\net6.0\MS_Models.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.AssemblyReference.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfoInputs.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfo.cs
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CopyComplete
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll

@@ -11,5 +11,6 @@ namespace MS_Models.Model
     {
         public bool Deleted { get; set; }
         public bool Hidden { get; set; }
+        public int? OrgId { get; set; }
     }
 }
