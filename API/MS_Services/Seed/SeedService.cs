@@ -69,10 +69,28 @@ namespace MS_Services.Seed
                 }
 
                 // Add Roles
+                List<Organization> organization = new List<Organization>()
+                {
+                    new Organization() { OrgName="My School", Address="Nan", Email="Nan", Phone=03470713121, IsActive=true }
+                };
+                foreach (var org in organization)
+                {
+                    var IsExist = await context.Organizations.Where(x => x.OrgName == org.OrgName).FirstOrDefaultAsync();
+                    if (IsExist is null)
+                    {
+                        await context.Organizations.AddAsync(org);
+                    }
+                    else
+                    {
+                        context.Organizations.Update(org);
+                    }
+                }
+
+                // Add Roles
                 List<ApplicationRole> roles = new List<ApplicationRole>()
                 {
-                    new ApplicationRole() { Name="Admin", NormalizedName="Admin", Hidden=false, Deleted = false },
-                    new ApplicationRole() { Name="User", NormalizedName="User", Hidden=false, Deleted = false }
+                    new ApplicationRole() { Name="Admin", NormalizedName="Admin", Hidden=false, Deleted = false},
+                    new ApplicationRole() { Name="User", NormalizedName="User", Hidden=false, Deleted = false, OrgId = 1 }
                 };
                 foreach (var role in roles)
                 {
@@ -83,19 +101,16 @@ namespace MS_Services.Seed
                     }
                     else
                     {
-                        var ExistingRole = await roleManager.FindByNameAsync(role.Name);
-                        ExistingRole.Name = role.Name;
-                        ExistingRole.NormalizedName = role.NormalizedName;
-                        await roleManager.UpdateAsync(ExistingRole);
+                        await roleManager.UpdateAsync(role);
                     }
                 }
 
                 //Add Users
                 List<ApplicationUser> applicationUsers = new List<ApplicationUser>()
                 {
-                    new ApplicationUser { FirstName = "Admin", LastName = "Admin", Email = "admin@gmail.com", UserName = "admin", PasswordHash = "Admin.123", PhoneNumber = "03189159007", Active = true },
-                    new ApplicationUser { FirstName = "Hammas", LastName = "Khan", Email = "hammaskhan01@gmail.com", UserName = "hammaskhan01", PasswordHash = "Hemi.4364", PhoneNumber = "03470713121", Active = true },
-                    new ApplicationUser { FirstName = "Ahsan", LastName = "Mehmood", Email = "ahsanmehmood454@gmail.com", UserName = "ahsanmehmood", PasswordHash = "Ahsan.4413", PhoneNumber = "03068564413", Active = true }
+                    new ApplicationUser { FirstName = "Admin", LastName = "Admin", Email = "admin@gmail.com", UserName = "admin", PasswordHash = "Admin.123", PhoneNumber = "03189159007", IsActive = true },
+                    new ApplicationUser { FirstName = "Hammas", LastName = "Khan", Email = "hammaskhan01@gmail.com", UserName = "hammaskhan01", PasswordHash = "Hemi.4364", PhoneNumber = "03470713121", IsActive = true },
+                    new ApplicationUser { FirstName = "Ahsan", LastName = "Mehmood", Email = "ahsanmehmood454@gmail.com", UserName = "ahsanmehmood", PasswordHash = "Ahsan.4413", PhoneNumber = "03068564413", IsActive = true }
                 };
                 foreach (var user in applicationUsers)
                 {
@@ -111,7 +126,7 @@ namespace MS_Services.Seed
                         IsExist.Email = user.Email;
                         IsExist.UserName = user.UserName;
                         IsExist.PhoneNumber = user.PhoneNumber;
-                        IsExist.Active = user.Active;
+                        IsExist.IsActive = user.IsActive;
                         var password = new PasswordHasher<ApplicationUser>();
                         IsExist.PasswordHash = password.HashPassword(null, user.PasswordHash);
                         await userManager.UpdateAsync(IsExist);
@@ -151,8 +166,8 @@ namespace MS_Services.Seed
                     }
                 }
 
-
                 await context.SaveChangesAsync();
+
                 return new Response<string>
                 {
                     Message = "SeedData add or update successfully",

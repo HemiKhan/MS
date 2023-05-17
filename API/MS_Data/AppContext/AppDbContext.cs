@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using MS_Models;
 using MS_Models.Common;
 using MS_Models.Model;
 using MS_Models.Relations.ManyToMany;

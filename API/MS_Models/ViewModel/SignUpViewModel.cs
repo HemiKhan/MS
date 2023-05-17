@@ -16,7 +16,7 @@ namespace MS_Models.ViewModel
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string PhoneNumber { get; set; }
-        public bool Active { get; set; }
+        public bool IsActive { get; set; }
 
     }
 
@@ -34,7 +34,7 @@ namespace MS_Models.ViewModel
                 res.UserName = item.UserName;
                 res.Password = item.PasswordHash;
                 res.PhoneNumber = item.PhoneNumber;
-                res.Active = item.Active;
+                res.IsActive = item.IsActive;
                 users.Add(res);
             }
             return users;
@@ -49,7 +49,7 @@ namespace MS_Models.ViewModel
             res.UserName = data.UserName;
             res.Password = data.PasswordHash;
             res.PhoneNumber = data.PhoneNumber;
-            res.Active = data.Active;
+            res.IsActive = data.IsActive;
             return res;
         }
 
@@ -62,7 +62,7 @@ namespace MS_Models.ViewModel
             res.UserName = data.UserName;
             res.PasswordHash = data.Password;
             res.PhoneNumber = data.PhoneNumber;
-            res.Active = data.Active;
+            res.IsActive = data.IsActive;
             return res;
         }
     }
