@@ -49,3 +49,20 @@ D:\Hammas\Management-System\API\MS_Data\obj\Debug\net6.0\refint\MS_Data.dll
 D:\Hammas\Management-System\API\MS_Data\obj\Debug\net6.0\MS_Data.pdb
 D:\Hammas\Management-System\API\MS_Data\obj\Debug\net6.0\MS_Data.genruntimeconfig.cache
 D:\Hammas\Management-System\API\MS_Data\obj\Debug\net6.0\ref\MS_Data.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.deps.json
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.runtimeconfig.json
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\bin\Debug\net6.0\MS_Models.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\bin\Debug\net6.0\MS_Models.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.csproj.AssemblyReference.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.AssemblyInfoInputs.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.AssemblyInfo.cs
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.csproj.CoreCompileInputs.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.csproj.CopyComplete
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\refint\MS_Data.dll
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.pdb
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.genruntimeconfig.cache
+C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\ref\MS_Data.dll

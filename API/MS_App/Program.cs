@@ -7,7 +7,6 @@ using MS_Data.AppContext;
 using MS_Data.DataConfig;
 using MS_Models.FilterModel;
 using MS_Models.Model;
-using MS_Services.SignalR;
 using Newtonsoft.Json.Serialization;
 using System.Text;
 
@@ -58,7 +57,6 @@ services.AddAuthentication(a =>
 
 
 // Add App Services Start
-services.AddSignalR();
 services.AddLogging();
 services.AddAppServices();
 // Add App Services End
@@ -122,7 +120,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.MapHub<SignalR>("/realtime");
 
 app.Run();

@@ -14,7 +14,6 @@ namespace MS_Models.Model
         public string? FirstName { get; set; }
         [StringLength(100)]
         public string? LastName { get; set; }
-        public string OrgabizationName { get; set; } = "";
-        public bool Active { get; set; }
+        public bool IsActive { get; set; } = true;
     }
 }

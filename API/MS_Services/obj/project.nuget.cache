@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5uM4VR5RCV4qmSaKnii5dl7l/qUiL2sh1yKUk8locB3XW3+gd+hzUvVM0N2q2aMYSOrKQ685ZVn3RbImTUl+/Q==",
+  "dgSpecHash": "E0w5SQoQWS3OIMUO/XGyq2ituk4TpoxlEfL5sylDFBSQCk7eZfkt/qqOWtnun3xlXFOsM4kU057pt9VCbhPrYA==",
   "success": true,
-  "projectFilePath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Services\\MS_Services.csproj",
+  "projectFilePath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Services\\MS_Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
     "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.3\\microsoft.aspnet.signalr.2.4.3.nupkg.sha512",

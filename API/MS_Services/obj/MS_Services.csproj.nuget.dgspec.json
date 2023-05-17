@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Services\\MS_Services.csproj": {}
+    "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Services\\MS_Services.csproj": {}
   },
   "projects": {
-    "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\MS_Data.csproj": {
+    "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\MS_Data.csproj",
+        "projectUniqueName": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj",
         "projectName": "MS_Data",
-        "projectPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\MS_Data.csproj",
+        "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj",
         "packagesPath": "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\",
-        "outputPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\obj\\",
+        "outputPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj": {
-                "projectPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj"
+              "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj": {
+                "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj": {
+    "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj",
+        "projectUniqueName": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj",
         "projectName": "MS_Models",
-        "projectPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj",
+        "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj",
         "packagesPath": "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\",
-        "outputPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\obj\\",
+        "outputPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -172,14 +172,14 @@
         }
       }
     },
-    "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Services\\MS_Services.csproj": {
+    "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Services\\MS_Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Services\\MS_Services.csproj",
+        "projectUniqueName": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Services\\MS_Services.csproj",
         "projectName": "MS_Services",
-        "projectPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Services\\MS_Services.csproj",
+        "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Services\\MS_Services.csproj",
         "packagesPath": "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\",
-        "outputPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Services\\obj\\",
+        "outputPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -201,11 +201,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\MS_Data.csproj": {
-                "projectPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\MS_Data.csproj"
+              "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj": {
+                "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj"
               },
-              "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj": {
-                "projectPath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Models\\MS_Models.csproj"
+              "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj": {
+                "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj"
               }
             }
           }
