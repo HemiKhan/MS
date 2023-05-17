@@ -392,6 +392,12 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("CampusId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClassId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Fee")
                         .HasColumnType("int");
 
@@ -400,6 +406,15 @@ namespace MS_Data.Migrations
 
                     b.Property<bool>("IsFeeStructure")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("SectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SessionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -722,7 +737,7 @@ namespace MS_Data.Migrations
             modelBuilder.Entity("MS_Models.Model.Campus", b =>
                 {
                     b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("CampusId")
+                        .WithMany("Campus")
                         .HasForeignKey("ClassSectionId");
 
                     b.HasOne("MS_Models.Model.Organization", "Organization")
@@ -737,7 +752,7 @@ namespace MS_Data.Migrations
             modelBuilder.Entity("MS_Models.Model.Class", b =>
                 {
                     b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("ClassId")
+                        .WithMany("Class")
                         .HasForeignKey("ClassSectionId");
 
                     b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
@@ -761,7 +776,7 @@ namespace MS_Data.Migrations
             modelBuilder.Entity("MS_Models.Model.Section", b =>
                 {
                     b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("SectionId")
+                        .WithMany("Section")
                         .HasForeignKey("ClassSectionId");
 
                     b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
@@ -776,7 +791,7 @@ namespace MS_Data.Migrations
             modelBuilder.Entity("MS_Models.Model.Session", b =>
                 {
                     b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("SessionId")
+                        .WithMany("Session")
                         .HasForeignKey("ClassSectionId");
 
                     b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
@@ -800,7 +815,7 @@ namespace MS_Data.Migrations
             modelBuilder.Entity("MS_Models.Model.Students", b =>
                 {
                     b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("StudentId")
+                        .WithMany("Students")
                         .HasForeignKey("ClassSectionId");
 
                     b.Navigation("ClassSection");
@@ -808,15 +823,15 @@ namespace MS_Data.Migrations
 
             modelBuilder.Entity("MS_Models.Model.ClassSection", b =>
                 {
-                    b.Navigation("CampusId");
+                    b.Navigation("Campus");
 
-                    b.Navigation("ClassId");
+                    b.Navigation("Class");
 
-                    b.Navigation("SectionId");
+                    b.Navigation("Section");
 
-                    b.Navigation("SessionId");
+                    b.Navigation("Session");
 
-                    b.Navigation("StudentId");
+                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("MS_Models.Model.FeeStructure", b =>
