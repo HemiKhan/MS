@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/AI/assets/css/LoginStyle.css">
+    <link rel="stylesheet" href="~/AI/assets/toastr/toastr.min.css" />
+    <!-- -- Icon file Start -->
+    <link rel="stylesheet" href="~/AI/assets/fonts/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="~/AI/assets/fonts/font-awesome/css/fontawesome.css" />
+    <!-- -- Icon file End -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="form-content">
+
+            <h3>Log-In</h3>
+            <form method="post" enctype="multipart/form-data" asp-controller="User" asp-action="Login">
+                <div class="inputBox">
+                    <span>Email</span>
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-user"></i></div>
+                        <input type="text" name="Email" class="txtemail" />
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                    <span>Pasword</span>
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-lock"></i></div>
+                        <input type="password" name="Password" class="txtpass password" />
+                        <i class="fa fa-eye passicon"></i>
+                    </div>
+                </div>
+
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+
+                <div class="inputBox">
+                    <div class="box">
+                        <input type="submit" value="Log-In" class="btnlogin submitlogin" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- JS -->
+<script src="~/AI/assets/Jquery/jquery.min.js"></script>
+<script src="~/AI/assets/toastr/toastr.min.js"></script>
+<script>
+
+    $(".passicon").click(function() {
+        $(this).toggleClass("fa-eye-slash");
+        if ($(".txtpass").attr("type") == "password") {
+            $(".txtpass").attr("type", "text");
+        }
+        else {
+            $(".txtpass").attr("type", "password");
+        }
+    });
+
+</script>

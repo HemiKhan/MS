@@ -1,0 +1,51 @@
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Services.deps.json
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Services.dll
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Services.pdb
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Data.dll
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Models.dll
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Data.pdb
+D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Models.pdb
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.AssemblyReference.cache
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfoInputs.cache
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfo.cs
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CoreCompileInputs.cache
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CopyComplete
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.dll
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
+D:\Hammas\Managment System\Management System\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.AssemblyReference.cache
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfoInputs.cache
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfo.cs
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CoreCompileInputs.cache
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Services.deps.json
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Services.dll
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Services.pdb
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Data.dll
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Models.dll
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Data.pdb
+E:\Programing\Applicatons\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Models.pdb
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CopyComplete
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.dll
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
+E:\Programing\Applicatons\Management-System\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Services.deps.json
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Services.dll
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Services.pdb
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Data.dll
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Models.dll
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Data.pdb
+D:\Hammas\Management-System\API\MS_Services\bin\Debug\net6.0\MS_Models.pdb
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.AssemblyReference.cache
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfoInputs.cache
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfo.cs
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CoreCompileInputs.cache
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CopyComplete
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.dll
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
+D:\Hammas\Management-System\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll
