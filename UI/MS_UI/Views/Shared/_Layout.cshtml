@@ -1,263 +1,51 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MS_UI</title>
 
-
-    <link href="~/UI/assets/css/style.css?v=2.0.4" rel="stylesheet" />
-    <link href="~/UI/assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/UI/assets/AnalogClock/AnalogClock.css" rel="stylesheet" />
-    <link href="~/UI/assets/dataTables/css/dataTable.bootstrap.min.css" rel="stylesheet" />
-    <link href="~/UI/assets/dataTables/css/dataTable.responsive.bootstrap.min.css" rel="stylesheet" />
-    <link href="~/UI/assets/sweetAlert/sweetalert.min.css" rel="stylesheet" />
-    <link href="~/UI/assets/toastr/toastr.min.css" rel="stylesheet" />
-
-    <!-- Icons  Start -->
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
-    <link href="~/UI/assets/FontAwesome/FontAwesome-4.7.0/css/font-awesome-4.7.0.min.css" rel="stylesheet" />
-    <link href="~/UI/assets/FontAwesome/FontAwesome-5.10.2/css/all-5.10.2.min.css" rel="stylesheet" />
-    <link href="~/UI/assets/FontAwesome/FontAwesome-5.10.2/css/fontawesome-5.10.2.min.css" rel="stylesheet" />
-    <link rel="icon" href="~/UI/img/icon/myIcon.png" />
+    @Html.Partial("~/Views/Shared/_title_meta.cshtml")
+    @RenderSection("styles", false)
+    @Html.Partial("~/Views/Shared/_head_css.cshtml")
 
 </head>
-<body>
 
+<body data-sidebar="dark">
 
-    <div class="container-fluid BodyContainer">
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        @Html.Partial("~/Views/Shared/_topbar.cshtml")
+        @Html.Partial("~/Views/Shared/_sidebar.cshtml")
 
-        <!-- Navbar  Start-->
-        <nav>
-            <div class="nav-bar">
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
 
-                <span class="logo navLogo m-auto">
-                    <a href="#">
-                        Management
-                        System
-                    </a>
-                </span>
-                <div class="darkLight-searchBox">
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    @Html.Partial("~/Views/Shared/_page_title.cshtml")
 
-                    <div class="theme">
-                        <i class="bx bx-moon moon"></i>
-                        <i class="bx bx-sun sun"></i>
-                    </div>
-
-                    <div class="searchBox">
-                        <div class="searchToggle">
-                            <i class="bx bx-x cancel"></i>
-                            <i class="bx bx-search search"></i>
-                        </div>
-
-                        <div class="search-field">
-                            <input type="text" placeholder="Search...">
-                            <i class="bx bx-search"></i>
-                        </div>
-                    </div>
-                </div>
+                    @RenderBody()
+                </div> <!-- container-fluid -->
             </div>
-        </nav>
+            <!-- End Page-content -->
 
-        <!-- Sidebar Start -->
-        <div class="sidebar close">
-            <div class="logo-details">
-                <div class="ToggleContainer">
-                    <div class="SidebarToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <span class="logo_name">Management System</span>
-            </div>
-            <ul class="nav-links">
-                <li>
-                    <a href="#">
-                        <i class="bx bx-grid-alt"></i>
-                        <span class="link_name">Dashboard</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">Category</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a asp-action="Home" asp-controller="Students">
-                        <i class="bx bx-pie-chart-alt-2"></i>
-                        <span class="link_name">Students</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">Students</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="iocn-link">
-                        <a href="#">
-                            <i class="bx bx-collection"></i>
-                            <span class="link_name">Organization</span>
-                        </a>
-                        <i class="bx bxs-chevron-down arrow"></i>
-                    </div>
-                    <ul class="sub-menu justify-content-center">
-                        <li><a class="link_name" href="#">Student</a></li>
-                        <li><a href="#">HTML & CSS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">PHP & MySQL</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="iocn-link">
-                        <a href="#">
-                            <i class="bx bx-book-alt"></i>
-                            <span class="link_name">Posts</span>
-                        </a>
-                        <i class="bx bxs-chevron-down arrow"></i>
-                    </div>
-                    <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Posts</a></li>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Login Form</a></li>
-                        <li><a href="#">Card Design</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-line-chart"></i>
-                        <span class="link_name">Chart</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">Chart</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="iocn-link">
-                        <a href="#">
-                            <i class="bx bx-plug"></i>
-                            <span class="link_name">Plugins</span>
-                        </a>
-                        <i class="bx bxs-chevron-down arrow"></i>
-                    </div>
-                    <ul class="sub-menu">
-                        <li><a class="link_name" href="#">Plugins</a></li>
-                        <li><a href="#">UI Face</a></li>
-                        <li><a href="#">Pigments</a></li>
-                        <li><a href="#">Box Icons</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-compass"></i>
-                        <span class="link_name">Explore</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">Explore</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-history"></i>
-                        <span class="link_name">History</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">History</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-cog"></i>
-                        <span class="link_name">Setting</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">Setting</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="profile-details">
-                        <div class="profile-content">
-                            <img src="~/UI/img/icon/myLogo.png" alt="profileImg">
-                        </div>
-                        <div class="name-job">
-                            <div class="profile_name">Hammas</div>
-                            <div class="job">Web Desginer</div>
-                        </div>
-                        <i class="bx bx-log-out"></i>
-                    </div>
-                </li>
-            </ul>
+            @Html.Partial("~/Views/Shared/_footer.cshtml")
         </div>
-
-        <div class="content p-3">
-            @RenderBody()
-        </div>
-
-        <footer class="footer">
-            <div class="container">
-                &copy; 2023 - MS_UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>
-
-        <div class="modal fade" id="AddNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-lg modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Add New Students</h5>
-                        <a class="cursor-pointer" data-bs-dismiss="modal" aria-label="Close">
-                            <span class="fa fa-close"></span>
-                        </a>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <div class="inputBox my-3">
-                                    <input type="text" required="required">
-                                    <span>Student Name</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="inputBox my-3">
-                                    <input type="text" required="required">
-                                    <span>Student Name</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="inputBox my-3">
-                                    <input type="text" required="required">
-                                    <span>Student Name</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" />
-                            </div>
-                           <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Simple Text Field"/>
-                            </div>
-                            <div class="col-md-4">
-                                <select class="form-control">
-                                    <option value="-1">-- Select Dropdown --</option>
-                                    <option>A</option>
-                                    <option>B</option>
-                                    <option>C</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- end main content-->
 
     </div>
 
-    <script src="~/UI/assets/Jquery/jquery.min.js"></script>
-    <script src="~/UI/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/UI/assets/dataTables/js/dataTables.jquery.min.js"></script>
-    <script src="~/UI/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/UI/assets/dataTables/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/UI/assets/DigitalClock/FlipClock.js"></script>
-    <script src="~/UI/assets/toastr/toastr.min.js"></script>
-    <script src="~/UI/assets/js/script.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("externalhtml", required: false)
+
+    <!-- END layout-wrapper -->
+    @Html.Partial("~/Views/Shared/_right_sidebar.cshtml")
+
+    @Html.Partial("~/Views/Shared/_vendor_scripts.cshtml")
+
+    @RenderSection("scripts", required: false)
+
+
 </body>
+
 </html>
