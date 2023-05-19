@@ -6,12 +6,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MS_Models.Model;
-using MS_Models.ViewModel;
 using MS_Services.Mail;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using MS_Models.Common;
+using MS_Models.ViewModel.Auth;
 
 namespace MS_Services.Account
 {

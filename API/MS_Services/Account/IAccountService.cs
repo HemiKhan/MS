@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using MS_Models.Common;
 using MS_Models.Model;
-using MS_Models.ViewModel;
+using MS_Models.ViewModel.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;

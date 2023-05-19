@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MS_Models.ViewModel;
+using MS_Models.ViewModel.Auth;
 using MS_Services.Account;
 
 namespace MS_App.Controllers
