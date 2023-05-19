@@ -19,6 +19,8 @@ namespace MS_Models.Model
         public string? StudentImage { get; set; }
         public string? Religion { get; set; }
         public string? PrieviousSchool { get; set; }
+        public int? StudentCode { get; set; }
+        public DateTime? AdmissionDate { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public ClassSection? ClassSection { get; set; }
