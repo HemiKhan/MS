@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wEUINyuJ9ITpTCdoo+x0jhp850lXLJ1SeJbzYNd69RbBlODaTc3oUaggI1XE9qR87NKeotCEAHROMMa6tNOrhA==",
+  "dgSpecHash": "PPQ+OICnUcjLXBr/eqTG31j8MTDcHmyyJeexVoP3lpnadh/TEIzOuMYxqpCRTHei2gOx3Wf7qHOYu9VM5iX4TQ==",
   "success": true,
-  "projectFilePath": "E:\\Programing\\Applicatons\\Management-System\\API\\MS_Data\\MS_Data.csproj",
+  "projectFilePath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",

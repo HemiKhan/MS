@@ -12,7 +12,7 @@ build_property.RootNamespace = MS_UI
 build_property.ProjectDir = C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\UI\MS_UI\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\UI\MS_UI
 build_property._RazorSourceGeneratorDebug = 
 
@@ -20,40 +20,116 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Auth/auth-lock-screen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxhdXRoLWxvY2stc2NyZWVuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Auth/auth-login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxhdXRoLWxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Home/Students.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50cy5jc2h0bWw=
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Auth/auth-recoverpw.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxhdXRoLXJlY292ZXJwdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Auth/auth-register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxhdXRoLXJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Dashboard/dashboard-crypto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGRhc2hib2FyZC1jcnlwdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Dashboard/dashboard-saas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGRhc2hib2FyZC1zYWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_boxed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9ib3hlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_colored_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9jb2xvcmVkX3NpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Student/StudentRegistration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50UmVnaXN0cmF0aW9uLmNzaHRtbA==
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_compact_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9jb21wYWN0X3NpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/User/login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxsb2dpbi5jc2h0bWw=
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_horizontal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9ob3Jpem9udGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/User/Role.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSb2xlLmNzaHRtbA==
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_icon_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9pY29uX3NpZGViYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_light_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9saWdodF9zaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/Layouts/_layout_preloader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dHNcX2xheW91dF9wcmVsb2FkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_BlankLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CbGFua0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_head_css.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkX2Nzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_horizontal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9ob3Jpem9udGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_layout_ico_loading.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sYXlvdXRfaWNvX2xvYWRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_page_title.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wYWdlX3RpdGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_right_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9yaWdodF9zaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_title_meta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF90aXRsZV9tZXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_topbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF90b3BiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_vendor_scripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF92ZW5kb3Jfc2NyaXB0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/_ViewImports.cshtml]
@@ -63,7 +139,3 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Muhammad Hammas Khan/Desktop/Future/MS/UI/MS_UI/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-8qiqsc6a19
