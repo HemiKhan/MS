@@ -13,7 +13,6 @@ namespace MS_Models.Model
         public int? StudentId { get; set; }
         public string? RollNo { get; set; }
         public string? Status { get; set; }
-        public string? AddmissionDate { get; set; }
         public Students? Students { get; set; }
     }
 }
