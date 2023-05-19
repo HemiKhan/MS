@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MS_Models.ViewModel
 {
-    public class StudentViewModel
+    public class StudentsViewModel
     {
         public string? RollNo { get; set; }
         public string? StudentName { get; set; }

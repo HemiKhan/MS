@@ -1,4 +1,5 @@
-﻿using MS_Models.Model;
+﻿using MS_Models.Common;
+using MS_Models.Model;
 using MS_Models.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace MS_Services.StudentService
 {
     public interface IStudentService
     {
-        Task<Response<Organization>> GetOrgainzationAsync();
-        Task<Response<Organization>> GetByOrgainzationIdAsync(int OrgId);
-        Task<Response<Organization>> AddOrgainzationAsync(OrganizationViewModel model);
-        Task<Response<Organization>> UpdateOrgainzationAsync(Organization model);
-        Task<Response<Organization>> DeleteOrgainzationAsync(int OrgId);
+        Task<Response<Students>> GetStudentsAsync();
+        Task<Response<Students>> GetByStudentsIdAsync(int StdId);
+        Task<Response<StudentsViewModel>> AddStudentsAsync(StudentsViewModel model);
+        Task<Response<StudentsViewModel>> UpdateStudentsAsync(Students model);
+        Task<Response<StudentsViewModel>> DeleteStudentsAsync(int StdId);
     }
 }
