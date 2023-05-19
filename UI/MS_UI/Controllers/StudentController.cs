@@ -4,7 +4,7 @@ namespace MS_UI.Controllers
 {
     public class StudentController : Controller
     {
-        public IActionResult StudentRegistration()
+        public IActionResult Index()
         {
             return View();
         }
