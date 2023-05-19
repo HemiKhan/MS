@@ -11,8 +11,8 @@ namespace MS_Services.StudentService
 {
     public interface IStudentService
     {
-        Task<Response<Students>> GetStudentsAsync();
-        Task<Response<Students>> GetByStudentsIdAsync(int StdId);
+        Task<Response<StudentsViewModel>> GetStudentsAsync();
+        Task<Response<StudentsViewModel>> GetByStudentsIdAsync(int StdId);
         Task<Response<StudentsViewModel>> AddStudentsAsync(StudentsViewModel model);
         Task<Response<StudentsViewModel>> UpdateStudentsAsync(Students model);
         Task<Response<StudentsViewModel>> DeleteStudentsAsync(int StdId);

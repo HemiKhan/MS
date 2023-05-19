@@ -11,8 +11,8 @@ namespace MS_Services.OrganizationService
 {
     public interface IOrganizationService
     {
-        Task<Response<Organization>> GetOrgainzationAsync();
-        Task<Response<Organization>> GetByOrgainzationIdAsync(int OrgId);
+        Task<Response<OrganizationViewModel>> GetOrgainzationAsync();
+        Task<Response<OrganizationViewModel>> GetByOrgainzationIdAsync(int OrgId);
         Task<Response<OrganizationViewModel>> AddOrgainzationAsync(OrganizationViewModel model);
         Task<Response<OrganizationViewModel>> UpdateOrgainzationAsync(Organization model);
         Task<Response<OrganizationViewModel>> DeleteOrgainzationAsync(int OrgId);

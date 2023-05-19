@@ -11,30 +11,33 @@ namespace MS_Models.ViewModel
 {
     public class StudentsViewModel
     {
-        public string? RollNo { get; set; }
-        public string? StudentName { get; set; }
+        public int? StudentId { get; set; }
+        public string? Name { get; set; }
+        public string? DOB { get; set; }
+        public string? Gender { get; set; }
+        public long? PhoneNo { get; set; }
+        public string? Email { get; set; }
+        public string? Address { get; set; }
+        public string? StudentImage { get; set; }
+        public string? Religion { get; set; }
+        public string? PrieviousSchool { get; set; }
+        public string? FatherName { get; set; }
+        public string? MotherName { get; set; }
+        public string? Guardian { get; set; }
+        public string? FatherOccupation { get; set; }
+        public string? GuardianOccupation { get; set; }
+        public string? FaherCnic { get; set; }
+        public string? MotherCnic { get; set; }
+        public string? GuardianCnic { get; set; }
+        public string? HomeAddress { get; set; }
+        public long? ParentContactNumber { get; set; }
+        public string? FatherEmail { get; set; }
+        public string? FatherProfession { get; set; }
+        public string? MotherProfession { get; set; }
+        public string? GuardianProfession { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public bool IsAtive { get; set; }
     }
-    public static class CommonExtensions
-    {
-        public static DataTable ConverListToDatTable<T>(this IList<T> data)
-        {
-            PropertyDescriptorCollection props = TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            for (int i = 0; i < props.Count; i++)
-            {
-                PropertyDescriptor prop = props[i];
-                table.Columns.Add(prop.Name, prop.PropertyType);
-            }
-            object[] values = new object[props.Count];
-            foreach (T item in data)
-            {
-                for (int i = 0; i < values.Length; i++)
-                {
-                    values[i] = props[i].GetValue(item);
-                }
-                table.Rows.Add(values);
-            }
-            return table;
-        }       
-    }
+    
 }
