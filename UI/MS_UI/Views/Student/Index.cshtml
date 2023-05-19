@@ -106,9 +106,9 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
-                
+
                 </form>
             </div>
         </div>
@@ -175,7 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="validationGuardianName">Guardian Name</label>
@@ -194,7 +194,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="validationGuardianCNIC">Guardian CNIC</label>
@@ -231,7 +231,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationParentEmail">Parent Email</label>
@@ -241,7 +241,7 @@
                                 </div>
                             </div>
                         </div>
-                                             
+
 
                     </div>
 
@@ -251,13 +251,24 @@
         <!-- end card -->
     </div> <!-- end col -->
 
-
+  
     <div class="col-xl-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Acadmic Information</h4>
                 <form class="needs-validation" novalidate>
                     <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationStudentCode">Student Code</label>
+                                <input class="form-control" type="number" value="" id="validationStudentCode">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationCampus">Campus</label>
@@ -272,6 +283,21 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationSession">Session</label>
+                                <select class="form-control" id="validationSession">
+                                    <option>Select Session</option>
+                                    <option>2017-2021  </option>
+                                    <option>2018-2023</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                       
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -287,13 +313,85 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationSection">Section</label>
+                                <select class="form-control" id="validationSection">
+                                    <option>Select Section</option>
+                                    <option>A  </option>
+                                    <option>B</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                       
 
                 </form>
             </div>
         </div>
         <!-- end card -->
     </div> <!-- end col -->
+
+
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Other Information</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationMonthlyFee">Monthly Fee</label>
+                                <input class="form-control" type="number" value="" id="validationMonthlyFee">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationDiscountedStudent">Discounted Student</label>
+                                <select class="form-control" id="validationDiscountedStudent">
+                                    <option>Select Discounted Student</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" id="discountedPriceContainer" style="display: none;">
+                            <div class="form-group">
+                                <label for="validationDiscountedPrice">Discounted Price</label>
+                                <input class="form-control" type="number" value="" id="validationDiscountedPrice">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+        <!-- end card -->
+    </div> <!-- end col -->
+
+    <div class="col-xl-12  text-center">
+        <div class="button-items ">
+            <button type="button" class="btn btn-outline-primary waves-effect waves-light">Submitted</button>
+            <button type="button" class="btn btn-outline-primary waves-effect waves-light">Updated</button>
+        </div>
+    </div>
 
 </div>
 @section scripts{
@@ -302,4 +400,30 @@
     <script src="~/assets/js/pages/form-validation.init.js"></script>
 
     <script src="~/assets/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add change event listener to the Discounted Student dropdown
+            $('#validationDiscountedStudent').change(function () {
+                var selectedValue = $(this).val();
+
+                // Show/hide the Discounted Price field based on the selected value
+                if (selectedValue === 'Yes') {
+                    $('#discountedPriceContainer').show();
+                } else {
+                    $('#discountedPriceContainer').hide();
+                }
+            });
+
+            function generateRandomCode() {
+                var min = 10000; // Minimum value for the code (inclusive)
+                var max = 99999; // Maximum value for the code (inclusive)
+                var code = Math.floor(Math.random() * (max - min + 1) + min).toString();
+                return code;
+            }
+
+            // Generate a random 5-digit code and set it as the value of the Student Code input
+            var randomCode = generateRandomCode();
+            $('#validationStudentCode').val(randomCode);
+        });
+    </script>
 }

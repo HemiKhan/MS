@@ -1,1 +1,36 @@
-nnn
+# .NET Core build and package directories
+bin/
+obj/
+packages/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.vspscc
+*.vssscc
+*.bak
+*.cache
+*.sln.docstates
+
+# Visual Studio Code files
+.vscode/
+
+# Test Results
+TestResults/
+
+# Resharper files
+_ReSharper*/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+
+# Node.js
+node_modules/
+npm-debug.log*
