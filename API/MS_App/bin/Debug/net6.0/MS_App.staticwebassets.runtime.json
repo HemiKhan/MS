@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"ContentRoots":["C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_App\\wwwroot\\"],"Root":{"Children":{"Files":{"Children":{"PDF":{"Children":{"pdffile.pdf":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"Files/PDF/pdffile.pdf"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":null},"Images":{"Children":{"Studens.xlsx":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"Images/Studens.xlsx"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+=======
+{"ContentRoots":["D:\\Personal Work\\MS\\API\\MS_App\\wwwroot\\"],"Root":{"Children":{"Files":{"Children":{"PDF":{"Children":{"pdffile.pdf":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"Files/PDF/pdffile.pdf"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":null},"Images":{"Children":{"Studens.xlsx":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"Images/Studens.xlsx"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+>>>>>>> Ahsan-Mehmood

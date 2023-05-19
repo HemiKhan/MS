@@ -1,0 +1,429 @@
+﻿@{
+    ViewBag.Title = "Student Admission Form";
+    ViewBag.pTitle = "Student Admission Form";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Student Information</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationName">Name</label>
+                                <input type="text" class="form-control" id="validationName" placeholder="Name" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationDob">Date of Birth</label>
+                                <input class="form-control" type="date" value="" id="validationDob">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationAdmissionDate">Admission Date</label>
+                                <input class="form-control" type="date" value="" id="validationAdmissionDate">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationGender">Gender</label>
+                                <select class="form-control" id="validationGender">
+                                    <option>Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationPhoneNumber">PhoneNumber</label>
+                                <input class="form-control" type="tel" value="" id="validationPhoneNumber">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationEmail">Email</label>
+                                <input class="form-control" type="email" value="" placeholder="Example@example.com" id="validationEmail">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationAddress">Address</label>
+                                <input type="text" class="form-control" id="validationAddress" placeholder="Address" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationReligion">Religion</label>
+                                <input type="text" class="form-control" id="validationReligion" placeholder="Religion" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationPreviousSchool">Previous School</label>
+                                <input type="text" class="form-control" id="validationPreviousSchool" placeholder="Previous School" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationReligion">Profile Picture</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- end card -->
+    </div> <!-- end col -->
+
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Parent Information</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationFatherName">Father Name</label>
+                                <input type="text" class="form-control" id="validationFatherName" placeholder="Father Name" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationFatherProfession">Father Profession</label>
+                                <input type="text" class="form-control" id="validationFatherProfession" placeholder="Father Profession" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationFatherCNIC">Father CNIC</label>
+                                <input type="text" class="form-control" id="validationFatherCNIC" placeholder="Father CNIC" value="" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationMotherName">Mother Name</label>
+                                <input class="form-control" type="text" value="" placeholder="Mother Name" id="validationMotherName" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationMotherProfession">Mother Profession</label>
+                                <input class="form-control" type="text" value="" placeholder="Mother Profession" id="validationMotherProfession" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationMotherCNIC">Mother CNIC</label>
+                                <input class="form-control" type="text" value="" placeholder="Mother CNIC" id="validationMotherCNIC" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationGuardianName">Guardian Name</label>
+                                <input class="form-control" type="text" value="" placeholder="Guardian Name" id="validationGuardianName" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationGuardianProfession">Guardian Profession</label>
+                                <input class="form-control" type="text" value="" placeholder="Guardian Profession" id="validationGuardianProfession" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="validationGuardianCNIC">Guardian CNIC</label>
+                                <input class="form-control" type="text" value="" placeholder="Guardian CNIC" id="validationGuardianCNIC" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationGuardianRelation">Guardian Relation</label>
+                                <input class="form-control" type="text" value="" placeholder="Guardian Relation" id="validationGuardianRelation" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationParentPhoneNumber">Parent Contact Number</label>
+                                <input class="form-control" type="tel" value="" id="validationParentPhoneNumber">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationAddress">Address</label>
+                                <input type="text" class="form-control" id="validationAddress" placeholder="Address" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationParentEmail">Parent Email</label>
+                                <input class="form-control" type="email" value="" placeholder="Example@example.com" id="validationParentEmail">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- end card -->
+    </div> <!-- end col -->
+
+  
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Acadmic Information</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationStudentCode">Student Code</label>
+                                <input class="form-control" type="number" value="" id="validationStudentCode">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationCampus">Campus</label>
+                                <select class="form-control" id="validationCampus">
+                                    <option>Select Campus</option>
+                                    <option>Main Campus</option>
+                                    <option>Second Campus</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationSession">Session</label>
+                                <select class="form-control" id="validationSession">
+                                    <option>Select Session</option>
+                                    <option>2017-2021  </option>
+                                    <option>2018-2023</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationClass">Class</label>
+                                <select class="form-control" id="validationClass">
+                                    <option>Select Class</option>
+                                    <option>9th </option>
+                                    <option>10th</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationSection">Section</label>
+                                <select class="form-control" id="validationSection">
+                                    <option>Select Section</option>
+                                    <option>A  </option>
+                                    <option>B</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                       
+
+                </form>
+            </div>
+        </div>
+        <!-- end card -->
+    </div> <!-- end col -->
+
+
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Other Information</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationMonthlyFee">Monthly Fee</label>
+                                <input class="form-control" type="number" value="" id="validationMonthlyFee">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="validationDiscountedStudent">Discounted Student</label>
+                                <select class="form-control" id="validationDiscountedStudent">
+                                    <option>Select Discounted Student</option>
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" id="discountedPriceContainer" style="display: none;">
+                            <div class="form-group">
+                                <label for="validationDiscountedPrice">Discounted Price</label>
+                                <input class="form-control" type="number" value="" id="validationDiscountedPrice">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+        <!-- end card -->
+    </div> <!-- end col -->
+
+    <div class="col-xl-12  text-center">
+        <div class="button-items ">
+            <button type="button" class="btn btn-outline-primary waves-effect waves-light">Submitted</button>
+            <button type="button" class="btn btn-outline-primary waves-effect waves-light">Updated</button>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script src="~/assets/libs/parsleyjs/parsley.min.js"></script>
+
+    <script src="~/assets/js/pages/form-validation.init.js"></script>
+
+    <script src="~/assets/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add change event listener to the Discounted Student dropdown
+            $('#validationDiscountedStudent').change(function () {
+                var selectedValue = $(this).val();
+
+                // Show/hide the Discounted Price field based on the selected value
+                if (selectedValue === 'Yes') {
+                    $('#discountedPriceContainer').show();
+                } else {
+                    $('#discountedPriceContainer').hide();
+                }
+            });
+
+            function generateRandomCode() {
+                var min = 10000; // Minimum value for the code (inclusive)
+                var max = 99999; // Maximum value for the code (inclusive)
+                var code = Math.floor(Math.random() * (max - min + 1) + min).toString();
+                return code;
+            }
+
+            // Generate a random 5-digit code and set it as the value of the Student Code input
+            var randomCode = generateRandomCode();
+            $('#validationStudentCode').val(randomCode);
+        });
+    </script>
+}

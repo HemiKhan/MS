@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Services.deps.json
 D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Services.dll
 D:\Hammas\Managment System\Management System\API\MS_Services\bin\Debug\net6.0\MS_Services.pdb
@@ -66,3 +67,22 @@ C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0
 C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
 C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
 C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll
+=======
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Services.deps.json
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Services.dll
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Services.pdb
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Data.dll
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Models.dll
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Data.pdb
+D:\Personal Work\MS\API\MS_Services\bin\Debug\net6.0\MS_Models.pdb
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.AssemblyReference.cache
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfoInputs.cache
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.AssemblyInfo.cs
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CoreCompileInputs.cache
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.csproj.CopyComplete
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.dll
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\refint\MS_Services.dll
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\MS_Services.pdb
+D:\Personal Work\MS\API\MS_Services\obj\Debug\net6.0\ref\MS_Services.dll
+>>>>>>> Ahsan-Mehmood
