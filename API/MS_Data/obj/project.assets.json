@@ -2962,24 +2962,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj",
+      "projectUniqueName": "D:\\Personal Work\\MS\\API\\MS_Data\\MS_Data.csproj",
       "projectName": "MS_Data",
-      "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\MS_Data.csproj",
-      "packagesPath": "C:\\Users\\Muhammad Hammas Khan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Data\\obj\\",
+      "projectPath": "D:\\Personal Work\\MS\\API\\MS_Data\\MS_Data.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "D:\\Personal Work\\MS\\API\\MS_Data\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Muhammad Hammas Khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2987,15 +2982,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj": {
-              "projectPath": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_Models\\MS_Models.csproj"
+            "D:\\Personal Work\\MS\\API\\MS_Models\\MS_Models.csproj": {
+              "projectPath": "D:\\Personal Work\\MS\\API\\MS_Models\\MS_Models.csproj"
             }
           }
         }
@@ -3055,8 +3049,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Personal Work\\MS\\API\\MS_Data\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

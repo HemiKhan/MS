@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Hammas\Managment System\Management System\API\MS_Data\bin\Debug\net6.0\MS_Data.deps.json
 D:\Hammas\Managment System\Management System\API\MS_Data\bin\Debug\net6.0\MS_Data.runtimeconfig.json
 D:\Hammas\Managment System\Management System\API\MS_Data\bin\Debug\net6.0\MS_Data.dll
@@ -66,3 +67,22 @@ C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\ref
 C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.pdb
 C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.genruntimeconfig.cache
 C:\Users\Muhammad Hammas Khan\Desktop\Future\MS\API\MS_Data\obj\Debug\net6.0\ref\MS_Data.dll
+=======
+D:\Personal Work\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.deps.json
+D:\Personal Work\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.runtimeconfig.json
+D:\Personal Work\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.dll
+D:\Personal Work\MS\API\MS_Data\bin\Debug\net6.0\MS_Data.pdb
+D:\Personal Work\MS\API\MS_Data\bin\Debug\net6.0\MS_Models.dll
+D:\Personal Work\MS\API\MS_Data\bin\Debug\net6.0\MS_Models.pdb
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.csproj.AssemblyReference.cache
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.AssemblyInfoInputs.cache
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.AssemblyInfo.cs
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.csproj.CoreCompileInputs.cache
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.csproj.CopyComplete
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.dll
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\refint\MS_Data.dll
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.pdb
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\MS_Data.genruntimeconfig.cache
+D:\Personal Work\MS\API\MS_Data\obj\Debug\net6.0\ref\MS_Data.dll
+>>>>>>> Ahsan-Mehmood

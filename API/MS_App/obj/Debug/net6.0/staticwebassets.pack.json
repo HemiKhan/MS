@@ -1,11 +1,19 @@
 {
   "Files": [
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_App\\wwwroot\\Files\\PDF\\pdffile.pdf",
       "PackagePath": "staticwebassets\\Files\\PDF\\pdffile.pdf"
     },
     {
       "Id": "C:\\Users\\Muhammad Hammas Khan\\Desktop\\Future\\MS\\API\\MS_App\\wwwroot\\Images\\Studens.xlsx",
+=======
+      "Id": "D:\\Personal Work\\MS\\API\\MS_App\\wwwroot\\Files\\PDF\\pdffile.pdf",
+      "PackagePath": "staticwebassets\\Files\\PDF\\pdffile.pdf"
+    },
+    {
+      "Id": "D:\\Personal Work\\MS\\API\\MS_App\\wwwroot\\Images\\Studens.xlsx",
+>>>>>>> Ahsan-Mehmood
       "PackagePath": "staticwebassets\\Images\\Studens.xlsx"
     },
     {
