@@ -10,6 +10,7 @@ namespace MS_Models.Model
 {
     public class Students : CommonProps
     {
+        public string? StudentCode { get; set; }
         public string? Name { get; set; }
         public string? DOB { get; set; }
         public string? Gender { get; set; }

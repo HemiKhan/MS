@@ -87,7 +87,7 @@ namespace MS_Services.CampusService
         {
             try
             {
-                return new Response<OrganizationViewModel>
+                return new Response<CampusViewModel>
                 {
                     Message = "Found Data Successfully",
                     Status = true
