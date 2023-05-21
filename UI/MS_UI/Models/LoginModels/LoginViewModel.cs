@@ -1,8 +1,8 @@
-﻿namespace MS_UI.Models
+﻿namespace MS_UI.Models.LoginModels
 {
     public class LoginViewModel
     {
-        public string? Email { get; set; }
+        public string? UserId { get; set; }
         public string? Password { get; set; }
     }
 }

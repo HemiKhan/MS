@@ -12,7 +12,7 @@ namespace MS_Models.Model
         public string? SessionName { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public ClassSection? ClassSection { get; set; }
-        public FeeStructure? FeeStructure { get; set; }
+        public ICollection<ClassSection>? ClassSection { get; set; }
+        public ICollection<FeeStructure>? FeeStructure { get; set; }
     }
 }

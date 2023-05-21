@@ -13,8 +13,8 @@ namespace MS_Services.FeeStrutureService
     {
         Task<Response<FeeStructure>> GetFeeStructureAsync();
         Task<Response<FeeStructure>> GetByFeeStructureIdAsync(int FeeId);
-        Task<Response<FeeStructure>> AddFeeStructureAsync(FeeStructure model);
-        Task<Response<FeeStructure>> UpdateFeeStructureAsync(FeeStructure model);
-        Task<Response<FeeStructure>> DeleteFeeStructureAsync(int FeeId);
+        Task<Response<FeeStructureViewModel>> AddFeeStructureAsync(FeeStructureViewModel model);
+        Task<Response<FeeStructureViewModel>> UpdateFeeStructureAsync(FeeStructure model);
+        Task<Response<FeeStructureViewModel>> DeleteFeeStructureAsync(int FeeId);
     }
 }

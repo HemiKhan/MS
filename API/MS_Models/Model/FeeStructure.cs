@@ -9,13 +9,16 @@ namespace MS_Models.Model
 {
     public class FeeStructure : CommonProps
     {
+        public int? CampusId { get; set; }
         public int? SessionId { get; set; }
-        public int? SectionId { get; set; }
         public int? ClassId { get; set; }
+        public int? SectionId { get; set; }
         public int? Fee { get; set; }
 
-        public ICollection<Session>? Session { get; set; }
-        public ICollection<Section>? Section { get; set; }
-        public ICollection<Class>? Class { get; set; }
+        public ICollection<ClassSection>? ClassSection { get; set; }
+        public Campus? Campus { get; set; }
+        public Session? Session { get; set; }
+        public Section? Section { get; set; }
+        public Class? Class { get; set; }
     }
 }

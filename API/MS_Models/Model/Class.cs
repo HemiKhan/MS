@@ -10,7 +10,7 @@ namespace MS_Models.Model
     public class Class : CommonProps
     {
         public string? ClassName { get; set; }
-        public ClassSection? ClassSection { get; set; }
-        public FeeStructure? FeeStructure { get; set; }
+        public ICollection<ClassSection>? ClassSection { get; set; }
+        public ICollection<FeeStructure>? FeeStructure { get; set; }
     }
 }
