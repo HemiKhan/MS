@@ -1,4 +1,5 @@
-﻿using MS_Data.AppContext;
+﻿using Microsoft.EntityFrameworkCore;
+using MS_Data.AppContext;
 using MS_Models.Common;
 using MS_Models.Model;
 using MS_Models.ViewModel;
@@ -35,7 +36,7 @@ namespace MS_Services.CampusService
                 campus.OrganizationId = model.OrganizationId;
                 campus.IsAtive = model.IsActive;
 
-                var data = await db.Campus.AddAsync(campus);
+                await db.Campus.AddAsync(campus);
                 await db.SaveChangesAsync();
 
                 return new Response<CampusViewModel>
@@ -54,9 +55,27 @@ namespace MS_Services.CampusService
         {
             try
             {
+                if (CampusId == 0)
+                    return new Response<CampusViewModel>
+                    {
+                        Message = "Campus Id Not Found",
+                        Status = false
+                    };
+
+                var data = await db.Campus.Where(x => x.Id == CampusId).FirstOrDefaultAsync();
+                if (data is null)
+                    return new Response<CampusViewModel>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
+                db.Campus.Remove(data);
+                await db.SaveChangesAsync();
+
                 return new Response<CampusViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Campus Removed Successfully",
                     Status = true
                 };
             }
@@ -70,10 +89,26 @@ namespace MS_Services.CampusService
         {
             try
             {
+                if (CampusId == 0)
+                    return new Response<Campus>
+                    {
+                        Message = "Campus Id Not Found",
+                        Status = false
+                    };
+
+                var data = await db.Campus.Where(x => x.Id == CampusId).FirstOrDefaultAsync();
+                if (data is null)
+                    return new Response<Campus>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
                 return new Response<Campus>
                 {
-                    Message = "Found Data Successfully",
-                    Status = true
+                    Message = "Data Found Successfully",
+                    Status = true,
+                    Data = data
                 };
             }
             catch (Exception)
@@ -86,10 +121,19 @@ namespace MS_Services.CampusService
         {
             try
             {
+                var data = await db.Campus.ToListAsync();
+                if (data is null)
+                    return new Response<Campus>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
                 return new Response<Campus>
                 {
-                    Message = "Found Data Successfully",
-                    Status = true
+                    Message = "Data Found Successfully",
+                    Status = true,
+                    List = data
                 };
             }
             catch (Exception)
@@ -102,9 +146,31 @@ namespace MS_Services.CampusService
         {
             try
             {
+                if (model.Id == 0)
+                    return new Response<CampusViewModel>
+                    {
+                        Message = "Campus Id Not Found",
+                        Status = false
+                    };
+
+                var data = await db.Campus.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
+                if (data is null)
+                    return new Response<CampusViewModel>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+                
+                data.CampusName = model.CampusName;
+                data.OrganizationId = model.OrganizationId;
+                data.IsAtive = model.IsAtive;
+
+                db.Campus.Update(data);
+                await db.SaveChangesAsync();
+
                 return new Response<CampusViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Campus Updated Successfully",
                     Status = true
                 };
             }

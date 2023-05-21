@@ -1,4 +1,5 @@
-﻿using MS_Data.AppContext;
+﻿using Microsoft.EntityFrameworkCore;
+using MS_Data.AppContext;
 using MS_Models.Common;
 using MS_Models.Model;
 using MS_Models.ViewModel;
@@ -19,13 +20,52 @@ namespace MS_Services.FeeStrutureService
         }
 
 
-        public async Task<Response<FeeStructure>> AddFeeStructureAsync(FeeStructure model)
+        public async Task<Response<FeeStructureViewModel>> AddFeeStructureAsync(FeeStructureViewModel model)
         {
             try
             {
-                return new Response<FeeStructure>
+                if (model.CampusId == 0)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Campus Id Not Valid",
+                        Status = false
+                    };
+
+                if (model.ClassId == 0)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Class Id Not Valid",
+                        Status = false
+                    };
+
+                if (model.SectionId == 0)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Section Id Not Valid",
+                        Status = false
+                    };
+
+                if (model.Fee == 0)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Fee Not Valid",
+                        Status = false
+                    };
+
+                FeeStructure fee = new FeeStructure();
+                fee.CampusId = model.CampusId;
+                fee.ClassId = model.ClassId;
+                fee.SectionId = model.SectionId;
+                fee.SessionId = model.SessionId;
+                fee.Fee = model.Fee;
+                fee.IsAtive = model.IsActive;
+
+                await db.FeeStructures.AddAsync(fee);
+                await db.SaveChangesAsync();
+
+                return new Response<FeeStructureViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Fee Structure Added Successfully",
                     Status = true
                 };
             }
@@ -35,13 +75,31 @@ namespace MS_Services.FeeStrutureService
             }
         }
 
-        public async Task<Response<FeeStructure>> DeleteFeeStructureAsync(int FeeId)
+        public async Task<Response<FeeStructureViewModel>> DeleteFeeStructureAsync(int FeeId)
         {
             try
             {
-                return new Response<FeeStructure>
+                if (FeeId == 0)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Fee Id Not Found",
+                        Status = false
+                    };
+
+                var data = await db.FeeStructures.Where(x => x.Id == FeeId).FirstOrDefaultAsync();
+                if (data is null)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
+                db.FeeStructures.Remove(data);
+                await db.SaveChangesAsync();
+
+                return new Response<FeeStructureViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Fee Structure Removed Successfully",
                     Status = true
                 };
             }
@@ -55,10 +113,26 @@ namespace MS_Services.FeeStrutureService
         {
             try
             {
+                if (FeeId == 0)
+                    return new Response<FeeStructure>
+                    {
+                        Message = "Fee Id Not Valid",
+                        Status = false
+                    };
+
+                var data = await db.FeeStructures.Where(x => x.Id == FeeId).FirstOrDefaultAsync();
+                if (data is null)
+                    return new Response<FeeStructure>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
                 return new Response<FeeStructure>
                 {
-                    Message = "Found Data Successfully",
-                    Status = true
+                    Message = "Data Found Successfully",
+                    Status = true,
+                    Data = data
                 };
             }
             catch (Exception)
@@ -71,10 +145,19 @@ namespace MS_Services.FeeStrutureService
         {
             try
             {
+                var data = await db.FeeStructures.ToListAsync();
+                if (data is null)
+                    return new Response<FeeStructure>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
                 return new Response<FeeStructure>
                 {
-                    Message = "Found Data Successfully",
-                    Status = true
+                    Message = "Data Found Successfully",
+                    Status = true,
+                    List = data
                 };
             }
             catch (Exception)
@@ -83,13 +166,37 @@ namespace MS_Services.FeeStrutureService
             }
         }
 
-        public async Task<Response<FeeStructure>> UpdateFeeStructureAsync(FeeStructure model)
+        public async Task<Response<FeeStructureViewModel>> UpdateFeeStructureAsync(FeeStructure model)
         {
             try
             {
-                return new Response<FeeStructure>
+                if (model.Id == 0)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Session Id Not Found",
+                        Status = false
+                    };
+
+                var data = await db.FeeStructures.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
+                if (data is null)
+                    return new Response<FeeStructureViewModel>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
+                data.ClassId = model.ClassId;
+                data.SectionId = model.SectionId;
+                data.SessionId = model.SessionId;
+                data.Fee = model.Fee;
+                data.IsAtive = model.IsAtive;
+
+                db.FeeStructures.Update(data);
+                await db.SaveChangesAsync();
+
+                return new Response<FeeStructureViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Fee Structure (" + data.Fee + ") Updated Successfully",
                     Status = true
                 };
             }

@@ -13,7 +13,8 @@ namespace MS_Models.Model
     {
         public string? CampusName { get; set; }
         public int? OrganizationId { get; set; }
-        public ClassSection? ClassSection { get; set; }
         public Organization? Organization { get; set; }
+        public ICollection<ClassSection>? ClassSection { get; set; }
+        public ICollection<FeeStructure>? FeeStructure { get; set; }
     }
 }
