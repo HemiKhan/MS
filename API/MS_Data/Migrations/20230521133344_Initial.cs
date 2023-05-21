@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MS_Data.Migrations
 {
-    public partial class Initialize : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,6 +60,11 @@ namespace MS_Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CampusId = table.Column<int>(type: "int", nullable: true),
+                    SessionId = table.Column<int>(type: "int", nullable: true),
+                    SectionId = table.Column<int>(type: "int", nullable: true),
+                    ClassId = table.Column<int>(type: "int", nullable: true),
+                    StudentId = table.Column<int>(type: "int", nullable: true),
                     IsFeeStructure = table.Column<bool>(type: "bit", nullable: false),
                     Fee = table.Column<int>(type: "int", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
@@ -109,6 +114,9 @@ namespace MS_Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    SessionId = table.Column<int>(type: "int", nullable: true),
+                    SectionId = table.Column<int>(type: "int", nullable: true),
+                    ClassId = table.Column<int>(type: "int", nullable: true),
                     Fee = table.Column<int>(type: "int", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -260,6 +268,7 @@ namespace MS_Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DOB = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -421,9 +430,7 @@ namespace MS_Data.Migrations
                     StudentId = table.Column<int>(type: "int", nullable: true),
                     FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MotherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Guardian = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FatherOccupation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GuardianOccupation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GuardianName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FaherCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MotherCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuardianCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -433,6 +440,7 @@ namespace MS_Data.Migrations
                     FatherProfession = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MotherProfession = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuardianProfession = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GuardianRelation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

@@ -9,9 +9,13 @@ namespace MS_Models.Model
 {
     public class FeeStructure : CommonProps
     {
-        public ICollection<Session>? SessionId { get; set; }
-        public ICollection<Section>? SectionId { get; set; }
-        public ICollection<Class>? ClassId { get; set; }
+        public int? SessionId { get; set; }
+        public int? SectionId { get; set; }
+        public int? ClassId { get; set; }
         public int? Fee { get; set; }
+
+        public ICollection<Session>? Session { get; set; }
+        public ICollection<Section>? Section { get; set; }
+        public ICollection<Class>? Class { get; set; }
     }
 }

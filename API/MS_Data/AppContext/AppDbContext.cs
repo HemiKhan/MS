@@ -48,11 +48,11 @@ namespace MS_Data.AppContext
             builder.Entity<Students>().HasOne(c => c.Enrollments).WithOne(pa => pa.Students).HasForeignKey<Enrollments>(pa => pa.StudentId);
 
             //One To Many
-            builder.Entity<ClassSection>().HasMany(c => c.CampusId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.SessionId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.SessionId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.ClassId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.StudentId).WithOne(w => w.ClassSection);
+            builder.Entity<ClassSection>().HasMany(c => c.Campus).WithOne(w => w.ClassSection);
+            builder.Entity<ClassSection>().HasMany(c => c.Session).WithOne(w => w.ClassSection);
+            builder.Entity<ClassSection>().HasMany(c => c.Session).WithOne(w => w.ClassSection);
+            builder.Entity<ClassSection>().HasMany(c => c.Class).WithOne(w => w.ClassSection);
+            builder.Entity<ClassSection>().HasMany(c => c.Students).WithOne(w => w.ClassSection);
 
             //Many To Many
             //builder.Entity<BookCategory>().HasKey(bc => new { bc.BookId, bc.CategoryId });
