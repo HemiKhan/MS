@@ -185,6 +185,7 @@ namespace MS_Services.FeeStrutureService
                         Status = false
                     };
 
+                data.CampusId = model.CampusId;
                 data.ClassId = model.ClassId;
                 data.SectionId = model.SectionId;
                 data.SessionId = model.SessionId;

@@ -1,4 +1,4 @@
-﻿namespace MS_UI.Models
+﻿namespace MS_UI.Models.Common
 {
     public class Response<T>
     {
@@ -9,6 +9,7 @@
         public DateTime? Expiredate { get; set; }
         public T? Data { get; set; }
         public List<T>? List { get; set; }
-
+        public int? TotalRecords { get; set; }
+        public int? TotalPagesCount { get; set; }
     }
 }
