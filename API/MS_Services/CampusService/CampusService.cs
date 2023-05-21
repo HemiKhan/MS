@@ -23,9 +23,24 @@ namespace MS_Services.CampusService
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(model.CampusName))
+                    return new Response<CampusViewModel>
+                    {
+                        Message = "Campus Name Not Found",
+                        Status = false
+                    };
+
+                Campus campus = new Campus();
+                campus.CampusName = model.CampusName;
+                campus.OrganizationId = model.OrganizationId;
+                campus.IsAtive = model.IsActive;
+
+                var data = await db.Campus.AddAsync(campus);
+                await db.SaveChangesAsync();
+
                 return new Response<CampusViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Campus Added Successfully",
                     Status = true
                 };
             }
