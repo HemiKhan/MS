@@ -59,7 +59,7 @@ namespace MS_Services.OrganizationService
         {
             try
             {
-                if (OrgId > 0)
+                if (OrgId == 0)
                     return new Response<OrganizationViewModel>
                     {
                         Message = "Organization Id Not Found",
@@ -79,7 +79,7 @@ namespace MS_Services.OrganizationService
 
                 return new Response<OrganizationViewModel>
                 {
-                    Message = "Found Data Successfully",
+                    Message = "Remmove Data Successfully",
                     Status = true
                 };
             }
@@ -93,7 +93,7 @@ namespace MS_Services.OrganizationService
         {
             try
             {
-                if (OrgId > 0)
+                if (OrgId == 0)
                     return new Response<Organization>
                     {
                         Message = "Organization Id Not Found",
