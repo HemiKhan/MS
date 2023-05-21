@@ -13,9 +13,6 @@ namespace MS_App.Helper
             appservices.AddTransient<IOrganizationService, OrganizationService>();
             appservices.AddTransient<ICampusService, CampusService>();
 
-
-
-
             appservices.AddTransient<ISeedService, SeedService>();
             appservices.AddTransient<IAccountService, AccountService>();
             appservices.AddTransient<IMailService, MailService>();
