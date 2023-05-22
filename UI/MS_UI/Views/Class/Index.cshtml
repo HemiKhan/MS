@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Class";
+    ViewBag.pTitle = "Class";
+    ViewBag.pageTitle = "Class Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section styles{
+    <!-- DataTables -->
+    <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+}
+<style>
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h4 class="card-title float-left">Class</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-primary text-light float-right btnadd" data-toggle="modal" data-target=".addeditClass">Add</a>
+                    </div>
+                </div>
+
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Sr</th>
+                            <th hidden>Classid </th>
+                            <th>Class Name</th>
+                            <th>isActive</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td hidden>ClassId</td>
+                            <td>Main Class</td>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckcolor1" checked>
+                                    <label class="custom-control-label" for="customCheckcolor1"></label>
+                                </div>
+                            </td>
+                            <td><i class="fa fa-edit text-primary cursor-pointer" data-toggle="modal" data-target=".addeditClass"></i> <i class="fa fa-trash text-danger cursor-pointer"></i></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+@* Model Start *@
+<div class="modal fade addeditClass" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Add / Edit Class</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="form-group row">
+
+                                <input class="form-control mt-2 txtClassid d-none" type="text" value="" id="example-text-input">
+
+                                <label for="example-text-input" class="col-md-12 col-form-label">Class Name *</label>
+                                <div class="col-md-12">
+                                    <input class="form-control mt-2 txtClassname" type="text" value="" id="example-text-input">
+                                </div>
+
+                                <label for="example-text-input" class="col-md-12 col-form-label">isActive</label>
+                                <div class="col-md-12">
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckisActive" checked>
+                                        <label class="custom-control-label" for="customCheckisActive"></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 mt-2 text-center">
+                                    <button class="btn btn-primary btnaddedit">Save</button>
+                                    <button class="btn btn-danger btncancel">Cancel</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@*  Model End *@
+
+
+
+@section scripts{
+    <!-- Required datatable js -->
+    <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/assets/libs/jszip/jszip.min.js"></script>
+    <script src="~/assets/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/assets/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="~/assets/js/pages/datatables.init.js"></script>
+
+    <script src="~/assets/js/app.js"></script>
+}

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MS_Data.Migrations
 {
-    public partial class Initialize : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,18 +55,17 @@ namespace MS_Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClassSections",
+                name: "Class",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IsFeeStructure = table.Column<bool>(type: "bit", nullable: false),
-                    Fee = table.Column<int>(type: "int", nullable: true),
+                    ClassName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClassSections", x => x.Id);
+                    table.PrimaryKey("PK_Class", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -104,20 +103,6 @@ namespace MS_Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FeeStructures",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Fee = table.Column<int>(type: "int", nullable: true),
-                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FeeStructures", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Organizations",
                 columns: table => new
                 {
@@ -135,6 +120,20 @@ namespace MS_Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sections",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SectionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sections", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SessionLog",
                 columns: table => new
                 {
@@ -146,6 +145,47 @@ namespace MS_Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SessionLog", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Sessions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SessionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sessions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DOB = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNo = table.Column<long>(type: "bigint", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StudentImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Religion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PreviousSchool = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -255,116 +295,6 @@ namespace MS_Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Students",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DOB = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNo = table.Column<long>(type: "bigint", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StudentImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Religion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PrieviousSchool = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ClassSectionId = table.Column<int>(type: "int", nullable: true),
-                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Students", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Students_ClassSections_ClassSectionId",
-                        column: x => x.ClassSectionId,
-                        principalTable: "ClassSections",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Class",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ClassName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClassSectionId = table.Column<int>(type: "int", nullable: true),
-                    FeeStructureId = table.Column<int>(type: "int", nullable: true),
-                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Class", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Class_ClassSections_ClassSectionId",
-                        column: x => x.ClassSectionId,
-                        principalTable: "ClassSections",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Class_FeeStructures_FeeStructureId",
-                        column: x => x.FeeStructureId,
-                        principalTable: "FeeStructures",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sections",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SectionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClassSectionId = table.Column<int>(type: "int", nullable: true),
-                    FeeStructureId = table.Column<int>(type: "int", nullable: true),
-                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sections", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Sections_ClassSections_ClassSectionId",
-                        column: x => x.ClassSectionId,
-                        principalTable: "ClassSections",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Sections_FeeStructures_FeeStructureId",
-                        column: x => x.FeeStructureId,
-                        principalTable: "FeeStructures",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sessions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SessionName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ClassSectionId = table.Column<int>(type: "int", nullable: true),
-                    FeeStructureId = table.Column<int>(type: "int", nullable: true),
-                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sessions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Sessions_ClassSections_ClassSectionId",
-                        column: x => x.ClassSectionId,
-                        principalTable: "ClassSections",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Sessions_FeeStructures_FeeStructureId",
-                        column: x => x.FeeStructureId,
-                        principalTable: "FeeStructures",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Campus",
                 columns: table => new
                 {
@@ -372,17 +302,11 @@ namespace MS_Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CampusName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OrganizationId = table.Column<int>(type: "int", nullable: true),
-                    ClassSectionId = table.Column<int>(type: "int", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Campus", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Campus_ClassSections_ClassSectionId",
-                        column: x => x.ClassSectionId,
-                        principalTable: "ClassSections",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Campus_Organizations_OrganizationId",
                         column: x => x.OrganizationId,
@@ -421,18 +345,17 @@ namespace MS_Data.Migrations
                     StudentId = table.Column<int>(type: "int", nullable: true),
                     FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MotherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Guardian = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FatherOccupation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GuardianOccupation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FaherCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GuardianName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FatherCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MotherCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuardianCnic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HomeAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParentContactNumber = table.Column<long>(type: "bigint", nullable: true),
-                    FatherEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ParrentEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FatherProfession = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MotherProfession = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GuardianProfession = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GuardianRelation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -441,6 +364,96 @@ namespace MS_Data.Migrations
                     table.ForeignKey(
                         name: "FK_StudentDetails_Students_StudentId",
                         column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FeeStructures",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CampusId = table.Column<int>(type: "int", nullable: true),
+                    SessionId = table.Column<int>(type: "int", nullable: true),
+                    ClassId = table.Column<int>(type: "int", nullable: true),
+                    SectionId = table.Column<int>(type: "int", nullable: true),
+                    Fee = table.Column<int>(type: "int", nullable: true),
+                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FeeStructures", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FeeStructures_Campus_CampusId",
+                        column: x => x.CampusId,
+                        principalTable: "Campus",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_FeeStructures_Class_ClassId",
+                        column: x => x.ClassId,
+                        principalTable: "Class",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_FeeStructures_Sections_SectionId",
+                        column: x => x.SectionId,
+                        principalTable: "Sections",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_FeeStructures_Sessions_SessionId",
+                        column: x => x.SessionId,
+                        principalTable: "Sessions",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClassSections",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CampusId = table.Column<int>(type: "int", nullable: true),
+                    SessionId = table.Column<int>(type: "int", nullable: true),
+                    SectionId = table.Column<int>(type: "int", nullable: true),
+                    ClassId = table.Column<int>(type: "int", nullable: true),
+                    StudentId = table.Column<int>(type: "int", nullable: true),
+                    FeeStructureId = table.Column<int>(type: "int", nullable: true),
+                    IsFeeStructure = table.Column<bool>(type: "bit", nullable: false),
+                    DiscountedFee = table.Column<int>(type: "int", nullable: true),
+                    StudentsId = table.Column<int>(type: "int", nullable: true),
+                    IsAtive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClassSections", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ClassSections_Campus_CampusId",
+                        column: x => x.CampusId,
+                        principalTable: "Campus",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ClassSections_Class_ClassId",
+                        column: x => x.ClassId,
+                        principalTable: "Class",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ClassSections_FeeStructures_FeeStructureId",
+                        column: x => x.FeeStructureId,
+                        principalTable: "FeeStructures",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ClassSections_Sections_SectionId",
+                        column: x => x.SectionId,
+                        principalTable: "Sections",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ClassSections_Sessions_SessionId",
+                        column: x => x.SessionId,
+                        principalTable: "Sessions",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ClassSections_Students_StudentsId",
+                        column: x => x.StudentsId,
                         principalTable: "Students",
                         principalColumn: "Id");
                 });
@@ -485,11 +498,6 @@ namespace MS_Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Campus_ClassSectionId",
-                table: "Campus",
-                column: "ClassSectionId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Campus_OrganizationId",
                 table: "Campus",
                 column: "OrganizationId",
@@ -497,14 +505,34 @@ namespace MS_Data.Migrations
                 filter: "[OrganizationId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Class_ClassSectionId",
-                table: "Class",
-                column: "ClassSectionId");
+                name: "IX_ClassSections_CampusId",
+                table: "ClassSections",
+                column: "CampusId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Class_FeeStructureId",
-                table: "Class",
+                name: "IX_ClassSections_ClassId",
+                table: "ClassSections",
+                column: "ClassId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClassSections_FeeStructureId",
+                table: "ClassSections",
                 column: "FeeStructureId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClassSections_SectionId",
+                table: "ClassSections",
+                column: "SectionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClassSections_SessionId",
+                table: "ClassSections",
+                column: "SessionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClassSections_StudentsId",
+                table: "ClassSections",
+                column: "StudentsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enrollments_StudentId",
@@ -514,24 +542,24 @@ namespace MS_Data.Migrations
                 filter: "[StudentId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sections_ClassSectionId",
-                table: "Sections",
-                column: "ClassSectionId");
+                name: "IX_FeeStructures_CampusId",
+                table: "FeeStructures",
+                column: "CampusId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sections_FeeStructureId",
-                table: "Sections",
-                column: "FeeStructureId");
+                name: "IX_FeeStructures_ClassId",
+                table: "FeeStructures",
+                column: "ClassId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sessions_ClassSectionId",
-                table: "Sessions",
-                column: "ClassSectionId");
+                name: "IX_FeeStructures_SectionId",
+                table: "FeeStructures",
+                column: "SectionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sessions_FeeStructureId",
-                table: "Sessions",
-                column: "FeeStructureId");
+                name: "IX_FeeStructures_SessionId",
+                table: "FeeStructures",
+                column: "SessionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StudentDetails_StudentId",
@@ -539,11 +567,6 @@ namespace MS_Data.Migrations
                 column: "StudentId",
                 unique: true,
                 filter: "[StudentId] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Students_ClassSectionId",
-                table: "Students",
-                column: "ClassSectionId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -564,10 +587,7 @@ namespace MS_Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Campus");
-
-            migrationBuilder.DropTable(
-                name: "Class");
+                name: "ClassSections");
 
             migrationBuilder.DropTable(
                 name: "EmailPlaceholders");
@@ -579,13 +599,7 @@ namespace MS_Data.Migrations
                 name: "Enrollments");
 
             migrationBuilder.DropTable(
-                name: "Sections");
-
-            migrationBuilder.DropTable(
                 name: "SessionLog");
-
-            migrationBuilder.DropTable(
-                name: "Sessions");
 
             migrationBuilder.DropTable(
                 name: "StudentDetails");
@@ -597,16 +611,25 @@ namespace MS_Data.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Organizations");
-
-            migrationBuilder.DropTable(
                 name: "FeeStructures");
 
             migrationBuilder.DropTable(
                 name: "Students");
 
             migrationBuilder.DropTable(
-                name: "ClassSections");
+                name: "Campus");
+
+            migrationBuilder.DropTable(
+                name: "Class");
+
+            migrationBuilder.DropTable(
+                name: "Sections");
+
+            migrationBuilder.DropTable(
+                name: "Sessions");
+
+            migrationBuilder.DropTable(
+                name: "Organizations");
         }
     }
 }

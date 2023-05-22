@@ -48,11 +48,17 @@ namespace MS_Data.AppContext
             builder.Entity<Students>().HasOne(c => c.Enrollments).WithOne(pa => pa.Students).HasForeignKey<Enrollments>(pa => pa.StudentId);
 
             //One To Many
-            builder.Entity<ClassSection>().HasMany(c => c.CampusId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.SessionId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.SessionId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.ClassId).WithOne(w => w.ClassSection);
-            builder.Entity<ClassSection>().HasMany(c => c.StudentId).WithOne(w => w.ClassSection);
+            builder.Entity<Campus>().HasMany(c => c.ClassSection).WithOne(w => w.Campus);
+            builder.Entity<Session>().HasMany(c => c.ClassSection).WithOne(w => w.Session);
+            builder.Entity<Section>().HasMany(c => c.ClassSection).WithOne(w => w.Section);
+            builder.Entity<Class>().HasMany(c => c.ClassSection).WithOne(w => w.Class);
+            builder.Entity<Students>().HasMany(c => c.ClassSection).WithOne(w => w.Students);
+            builder.Entity<FeeStructure>().HasMany(c => c.ClassSection).WithOne(w => w.FeeStructure);
+
+            builder.Entity<Campus>().HasMany(c => c.FeeStructure).WithOne(w => w.Campus);
+            builder.Entity<Session>().HasMany(c => c.FeeStructure).WithOne(w => w.Session);
+            builder.Entity<Class>().HasMany(c => c.FeeStructure).WithOne(w => w.Class);
+            builder.Entity<Section>().HasMany(c => c.FeeStructure).WithOne(w => w.Section);
 
             //Many To Many
             //builder.Entity<BookCategory>().HasKey(bc => new { bc.BookId, bc.CategoryId });

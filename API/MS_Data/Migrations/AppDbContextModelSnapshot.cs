@@ -335,9 +335,6 @@ namespace MS_Data.Migrations
                     b.Property<string>("CampusName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ClassSectionId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");
 
@@ -345,8 +342,6 @@ namespace MS_Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassSectionId");
 
                     b.HasIndex("OrganizationId")
                         .IsUnique()
@@ -366,20 +361,10 @@ namespace MS_Data.Migrations
                     b.Property<string>("ClassName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ClassSectionId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FeeStructureId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassSectionId");
-
-                    b.HasIndex("FeeStructureId");
 
                     b.ToTable("Class");
                 });
@@ -392,7 +377,16 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Fee")
+                    b.Property<int?>("CampusId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClassId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DiscountedFee")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FeeStructureId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsAtive")
@@ -401,7 +395,31 @@ namespace MS_Data.Migrations
                     b.Property<bool>("IsFeeStructure")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("SectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SessionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("StudentsId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CampusId");
+
+                    b.HasIndex("ClassId");
+
+                    b.HasIndex("FeeStructureId");
+
+                    b.HasIndex("SectionId");
+
+                    b.HasIndex("SessionId");
+
+                    b.HasIndex("StudentsId");
 
                     b.ToTable("ClassSections");
                 });
@@ -446,13 +464,33 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("CampusId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ClassId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Fee")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("SectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SessionId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CampusId");
+
+                    b.HasIndex("ClassId");
+
+                    b.HasIndex("SectionId");
+
+                    b.HasIndex("SessionId");
 
                     b.ToTable("FeeStructures");
                 });
@@ -493,12 +531,6 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ClassSectionId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FeeStructureId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");
 
@@ -506,10 +538,6 @@ namespace MS_Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassSectionId");
-
-                    b.HasIndex("FeeStructureId");
 
                     b.ToTable("Sections");
                 });
@@ -522,14 +550,8 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("ClassSectionId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("FeeStructureId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");
@@ -542,10 +564,6 @@ namespace MS_Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClassSectionId");
-
-                    b.HasIndex("FeeStructureId");
-
                     b.ToTable("Sessions");
                 });
 
@@ -557,31 +575,25 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("FaherCnic")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FatherEmail")
+                    b.Property<string>("FatherCnic")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FatherName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FatherOccupation")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FatherProfession")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Guardian")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GuardianCnic")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("GuardianOccupation")
+                    b.Property<string>("GuardianName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GuardianProfession")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianRelation")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HomeAddress")
@@ -601,6 +613,9 @@ namespace MS_Data.Migrations
 
                     b.Property<long?>("ParentContactNumber")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("ParrentEmail")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("StudentId")
                         .HasColumnType("int");
@@ -625,14 +640,11 @@ namespace MS_Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ClassSectionId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DOB")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("DOB")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -649,10 +661,13 @@ namespace MS_Data.Migrations
                     b.Property<long?>("PhoneNo")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("PrieviousSchool")
+                    b.Property<string>("PreviousSchool")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Religion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentCode")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StudentImage")
@@ -662,8 +677,6 @@ namespace MS_Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClassSectionId");
 
                     b.ToTable("Students");
                 });
@@ -721,32 +734,50 @@ namespace MS_Data.Migrations
 
             modelBuilder.Entity("MS_Models.Model.Campus", b =>
                 {
-                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("CampusId")
-                        .HasForeignKey("ClassSectionId");
-
                     b.HasOne("MS_Models.Model.Organization", "Organization")
                         .WithOne("Campus")
                         .HasForeignKey("MS_Models.Model.Campus", "OrganizationId");
 
-                    b.Navigation("ClassSection");
-
                     b.Navigation("Organization");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.Class", b =>
+            modelBuilder.Entity("MS_Models.Model.ClassSection", b =>
                 {
-                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("ClassId")
-                        .HasForeignKey("ClassSectionId");
+                    b.HasOne("MS_Models.Model.Campus", "Campus")
+                        .WithMany("ClassSection")
+                        .HasForeignKey("CampusId");
+
+                    b.HasOne("MS_Models.Model.Class", "Class")
+                        .WithMany("ClassSection")
+                        .HasForeignKey("ClassId");
 
                     b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
-                        .WithMany("ClassId")
+                        .WithMany("ClassSection")
                         .HasForeignKey("FeeStructureId");
 
-                    b.Navigation("ClassSection");
+                    b.HasOne("MS_Models.Model.Section", "Section")
+                        .WithMany("ClassSection")
+                        .HasForeignKey("SectionId");
+
+                    b.HasOne("MS_Models.Model.Session", "Session")
+                        .WithMany("ClassSection")
+                        .HasForeignKey("SessionId");
+
+                    b.HasOne("MS_Models.Model.Students", "Students")
+                        .WithMany("ClassSection")
+                        .HasForeignKey("StudentsId");
+
+                    b.Navigation("Campus");
+
+                    b.Navigation("Class");
 
                     b.Navigation("FeeStructure");
+
+                    b.Navigation("Section");
+
+                    b.Navigation("Session");
+
+                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("MS_Models.Model.Enrollments", b =>
@@ -758,34 +789,31 @@ namespace MS_Data.Migrations
                     b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.Section", b =>
+            modelBuilder.Entity("MS_Models.Model.FeeStructure", b =>
                 {
-                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("SectionId")
-                        .HasForeignKey("ClassSectionId");
+                    b.HasOne("MS_Models.Model.Campus", "Campus")
+                        .WithMany("FeeStructure")
+                        .HasForeignKey("CampusId");
 
-                    b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
-                        .WithMany("SectionId")
-                        .HasForeignKey("FeeStructureId");
+                    b.HasOne("MS_Models.Model.Class", "Class")
+                        .WithMany("FeeStructure")
+                        .HasForeignKey("ClassId");
 
-                    b.Navigation("ClassSection");
+                    b.HasOne("MS_Models.Model.Section", "Section")
+                        .WithMany("FeeStructure")
+                        .HasForeignKey("SectionId");
 
-                    b.Navigation("FeeStructure");
-                });
+                    b.HasOne("MS_Models.Model.Session", "Session")
+                        .WithMany("FeeStructure")
+                        .HasForeignKey("SessionId");
 
-            modelBuilder.Entity("MS_Models.Model.Session", b =>
-                {
-                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("SessionId")
-                        .HasForeignKey("ClassSectionId");
+                    b.Navigation("Campus");
 
-                    b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
-                        .WithMany("SessionId")
-                        .HasForeignKey("FeeStructureId");
+                    b.Navigation("Class");
 
-                    b.Navigation("ClassSection");
+                    b.Navigation("Section");
 
-                    b.Navigation("FeeStructure");
+                    b.Navigation("Session");
                 });
 
             modelBuilder.Entity("MS_Models.Model.StudentDetail", b =>
@@ -797,35 +825,23 @@ namespace MS_Data.Migrations
                     b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.Students", b =>
+            modelBuilder.Entity("MS_Models.Model.Campus", b =>
                 {
-                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
-                        .WithMany("StudentId")
-                        .HasForeignKey("ClassSectionId");
-
                     b.Navigation("ClassSection");
+
+                    b.Navigation("FeeStructure");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.ClassSection", b =>
+            modelBuilder.Entity("MS_Models.Model.Class", b =>
                 {
-                    b.Navigation("CampusId");
+                    b.Navigation("ClassSection");
 
-                    b.Navigation("ClassId");
-
-                    b.Navigation("SectionId");
-
-                    b.Navigation("SessionId");
-
-                    b.Navigation("StudentId");
+                    b.Navigation("FeeStructure");
                 });
 
             modelBuilder.Entity("MS_Models.Model.FeeStructure", b =>
                 {
-                    b.Navigation("ClassId");
-
-                    b.Navigation("SectionId");
-
-                    b.Navigation("SessionId");
+                    b.Navigation("ClassSection");
                 });
 
             modelBuilder.Entity("MS_Models.Model.Organization", b =>
@@ -833,8 +849,24 @@ namespace MS_Data.Migrations
                     b.Navigation("Campus");
                 });
 
+            modelBuilder.Entity("MS_Models.Model.Section", b =>
+                {
+                    b.Navigation("ClassSection");
+
+                    b.Navigation("FeeStructure");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Session", b =>
+                {
+                    b.Navigation("ClassSection");
+
+                    b.Navigation("FeeStructure");
+                });
+
             modelBuilder.Entity("MS_Models.Model.Students", b =>
                 {
+                    b.Navigation("ClassSection");
+
                     b.Navigation("Enrollments");
 
                     b.Navigation("StudentDetail");

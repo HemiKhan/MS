@@ -15,7 +15,7 @@ var services = builder.Services;
 
 
 var SQLConnection = builder.Configuration.GetConnectionString("SQLConnection");
-services.AddDbContext<AppDbContext>(db => db.UseSqlServer(SQLConnection));
+services.AddDbContext<AppDbContext>(db => db.UseSqlServer(SQLConnection, sqlServerOptionsAction: sqlOption => sqlOption.EnableRetryOnFailure()));
 
 
 // Add Identity Connection Start
@@ -86,8 +86,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(MyCorsPolicy, builder =>
     {
-        builder.WithOrigins("https://localhost:7202/").AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-        //builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        //builder.WithOrigins("https://localhost:7202/").AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
         //builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
         //builder.SetIsOriginAllowed(origin => true);
     });
