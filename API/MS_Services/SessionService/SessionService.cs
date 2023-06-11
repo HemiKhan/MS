@@ -14,7 +14,7 @@ namespace MS_Services.SessionService
             this.db = db;
         }
 
-        public async Task<Response<SessionViewModel>> AddSessionAsync(SessionViewModel model)
+        public async Task<Response<SessionViewModel>> AddOrUpdateSessionAsync(SessionViewModel model)
         {
             try
             {
@@ -39,18 +39,41 @@ namespace MS_Services.SessionService
                         Status = false
                     };
 
-                Session sess = new Session();
-                sess.SessionName = model.SessionName;
-                sess.StartDate = model.StartDate;
-                sess.EndDate = model.EndDate;
-                sess.IsAtive = model.IsActive;
+                var msg = "";
 
-                await db.Sessions.AddAsync(sess);
+                if (model.SessionId > 0 || model.SessionId != null)
+                {
+                    var data = await db.Sessions.Where(x => x.Id == model.SessionId).FirstOrDefaultAsync();
+                    if (data is null)
+                        return new Response<SessionViewModel>
+                        {
+                            Message = "Data Not Found",
+                            Status = false
+                        };
+
+                    data.SessionName = model.SessionName;
+                    data.StartDate = model.StartDate;
+                    data.EndDate = model.EndDate;
+                    data.IsAtive = model.IsActive;
+                    db.Sessions.Update(data);
+                    msg = "Session (" + data.SessionName + ") Updated Successfully";
+                }
+                else
+                {
+                    Session sess = new Session();
+                    sess.SessionName = model.SessionName;
+                    sess.StartDate = model.StartDate;
+                    sess.EndDate = model.EndDate;
+                    sess.IsAtive = model.IsActive;
+                    await db.Sessions.AddAsync(sess);
+                    msg = "Session (" + sess.SessionName + ") Added Successfully";
+                }
+
                 await db.SaveChangesAsync();
 
                 return new Response<SessionViewModel>
                 {
-                    Message = "Session Added Successfully",
+                    Message = msg,
                     Status = true
                 };
             }
@@ -151,43 +174,5 @@ namespace MS_Services.SessionService
             }
         }
 
-        public async Task<Response<SessionViewModel>> UpdateSessionAsync(Session model)
-        {
-            try
-            {
-                if (model.Id == 0)
-                    return new Response<SessionViewModel>
-                    {
-                        Message = "Session Id Not Found",
-                        Status = false
-                    };
-
-                var data = await db.Sessions.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
-                if (data is null)
-                    return new Response<SessionViewModel>
-                    {
-                        Message = "Data Not Found",
-                        Status = false
-                    };
-
-                data.SessionName = model.SessionName;
-                data.StartDate = model.StartDate;
-                data.EndDate = model.EndDate;
-                data.IsAtive = model.IsAtive;
-
-                db.Sessions.Update(data);
-                await db.SaveChangesAsync();
-
-                return new Response<SessionViewModel>
-                {
-                    Message = "Session (" + data.SessionName + ") Updated Successfully",
-                    Status = true
-                };
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

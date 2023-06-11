@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<MS_Models.Model.Session>;
+@{
     ViewBag.Title = "Session";
     ViewBag.pTitle = "Session";
     ViewBag.pageTitle = "Session Management";
@@ -11,7 +12,6 @@
 
     <!-- Responsive datatable examples -->
     <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
 }
 <style>
     .cursor-pointer {
@@ -48,20 +48,28 @@
 
 
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td hidden>SessionId</td>
-                            <td>Main Session</td>
-                            <td>22-1-23</td>
-                            <td>22-1-23</td>
-                            <td>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheckcolor1" checked>
-                                    <label class="custom-control-label" for="customCheckcolor1"></label>
-                                </div>
-                            </td>
-                            <td><i class="fa fa-edit text-primary cursor-pointer" data-toggle="modal" data-target=".addeditSession"></i> <i class="fa fa-trash text-danger cursor-pointer"></i></td>
-                        </tr>
+                        @if (Model != null)
+                        {
+                            int i = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td hidden><span class="SessId">@item.Id</span></td>
+                                    <td><span class="SessName">@item.SessionName</span></td>
+                                    <td><span class="SessStartDate">@item.StartDate?.ToString("dd-MMM-yyyy")</span></td>
+                                    <td><span class="SessEndDate">@item.EndDate?.ToString("dd-MMM-yyyy")</span></td>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input rbIsActive" id="customCheckcolor1" @(item.IsAtive ? "checked" : "")>
+                                            <label class="custom-control-label" for="customCheckcolor1"></label>
+                                        </div>
+                                    </td>
+                                    <td><i class="fa fa-edit text-primary cursor-pointer SessionEdit" data-toggle="modal" data-target=".addeditSession"></i> <i class="fa fa-trash text-danger cursor-pointer"></i></td>
+                                </tr>
+                                i++;
+                            }
+                        }
 
                     </tbody>
                 </table>
@@ -84,41 +92,44 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
+                            <form asp-controller="Session" asp-action="AddOrUpdateSession">
+                                <div class="form-group row">
 
-                            <div class="form-group row">
+                                    <input class="form-control mt-2 txtSessionid" name="SessionId" type="text" id="txtSessionId">
 
-                                <input class="form-control mt-2 txtSessionid d-none" type="text" value="" id="example-text-input">
-
-                                <label for="example-text-input" class="col-md-2 col-form-label">Session Name *</label>
-                                <div class="col-md-4">
-                                    <input class="form-control mt-2 txtSessionname" type="text" value="" id="example-text-input">
-                                </div>
-
-                                <label for="example-text-input" class="col-md-2 col-form-label">Start Date *</label>
-                                <div class="col-md-4">
-                                    <input class="form-control mt-2" type="date" value="" id="example-text-input">
-                                </div>
-
-                                <label for="example-text-input" class="col-md-2 col-form-label">End Date *</label>
-                                <div class="col-md-4">
-                                    <input class="form-control mt-2" type="date" value="" id="example-text-input">
-                                </div>
-
-
-                                <label for="example-text-input" class="col-md-2 col-form-label">isActive</label>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox mt-2">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckisActive" checked>
-                                        <label class="custom-control-label" for="customCheckisActive"></label>
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Session Name *</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control mt-2 txtSessionname" name="SessionName" type="text" id="txtSessioName">
                                     </div>
-                                </div>
 
-                                <div class="col-md-12 mt-2 text-center">
-                                    <button class="btn btn-primary btnaddedit">Save</button>
-                                    <button class="btn btn-danger btncancel">Cancel</button>
-                                </div>
+                                    <label for="example-text-input" class="col-md-2 col-form-label">Start Date *</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control mt-2" name="StartDate" type="date" id="txtSessionStartDate">
+                                    </div>
 
-                            </div>
+                                    <label for="example-text-input" class="col-md-2 col-form-label">End Date *</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control mt-2" name="EndDate" type="date" id="txtSessionEndDate">
+                                    </div>
+
+                                    <label for="example-text-input" class="col-md-2 col-form-label">isActive</label>
+                                    <div class="col-md-4">
+                                        <div class="custom-control custom-checkbox mt-2">
+                                            @*<input type="hidden" name="IsActive" value="true" />*@
+                                            <input type="checkbox" name="IsActive" class="custom-control-input" id="rbIsActive" value="true" checked>
+                                            <label class="custom-control-label" for="rbIsActive"></label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mt-2 text-center">
+                                        <button class="btn btn-primary btnaddedit" type="submit">Save</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">Cancel</span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -146,9 +157,61 @@
     <!-- Responsive examples -->
     <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-
     <!-- Datatable init js -->
     <script src="~/assets/js/pages/datatables.init.js"></script>
 
     <script src="~/assets/js/app.js"></script>
+
+    <script>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            string errorMessage = TempData["ErrorMessage"].ToString();
+            <text>
+                    toastr.error('Error', '@Html.Raw(errorMessage)');
+            </text>
+        }
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            string successMessage = TempData["SuccessMessage"].ToString()!;
+            <text>
+                    toastr.success('Success', '@Html.Raw(successMessage)');
+            </text>
+        }
+
+        $(document).ready(function () {
+
+            function FormatedDate(date) {
+                var dateStr = date; // Your date string
+                var parts = dateStr.split('-');
+                var day = parseInt(parts[0]);
+                var month = parts[1];
+                var year = parseInt(parts[2]);
+                var monthNumber = {
+                    "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5,
+                    "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
+                };
+                var formattedDate = new Date(year, monthNumber[month], day).toISOString().split('T')[0];
+
+                return formattedDate;
+            }
+
+            $("#rbIsActive").change(function () {
+                $(this).val(this.checked.toString());
+            });
+
+            $('.SessionEdit').on('click', function () {
+                var SessId = $(this).closest('tr').find('.SessId').text();
+                var SessName = $(this).closest('tr').find('.SessName').text();
+                var SessStartDate = $(this).closest('tr').find('.SessStartDate').text();
+                var SessEndDate = $(this).closest('tr').find('.SessEndDate').text();
+                var IsActive = $(this).closest('tr').find('.rbIsActive').prop("checked");
+                $('#txtSessionId').val(SessId);
+                $('#txtSessioName').val(SessName);
+                $('#txtSessionStartDate').val(FormatedDate(SessStartDate));
+                $('#txtSessionEndDate').val(FormatedDate(SessEndDate));
+                $('#rbIsActive').prop("checked", IsActive);
+            });
+        });
+    </script>
 }

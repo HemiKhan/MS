@@ -11,6 +11,6 @@ namespace MS_Models.Common
     {
         [Key]
         public int Id { get; set; }
-        public bool IsAtive { get; set; }
+        public bool IsAtive { get; set; } = true;
     }
 }

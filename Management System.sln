@@ -25,6 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{670DA82E-D2E7-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS_UI", "UI\MS_UI\MS_UI.csproj", "{6A64A89C-B502-4CA0-B1DB-6C56565980FD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C094870A-D74A-4120-A1D8-691C6A17ACC2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -15,10 +15,20 @@ namespace MS_Models.ViewModel
         public string? ClassName { get; set; }
         public string? StudentName { get; set; }
         public string? RollNo { get; set; }
-        public string? AddmissionDate { get; set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public DateTime? AddmissionDate { get; set; }
         public bool IsFeeStructure { get; set; }
         public int? Fee { get; set; }
+    }
+
+    public class AddClassSectionViewModel
+    {
+        public int? CampusId { get; set; }
+        public int? SessionId { get; set; }
+        public int? SectionId { get; set; }
+        public int? ClassId { get; set; }
+        public int? StudentId { get; set; }
+        public int? FeeStructureId { get; set; }
+        public bool IsFeeStructure { get; set; }
+        public int? DiscountedFee { get; set; }
     }
 }

@@ -377,6 +377,9 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<DateTime?>("AdmissionDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("CampusId")
                         .HasColumnType("int");
 
@@ -432,8 +435,8 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("AddmissionDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("EnrollDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");

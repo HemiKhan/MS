@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MS_Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230521182841_Initial")]
+    [Migration("20230611143950_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -379,6 +379,9 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<DateTime?>("AdmissionDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("CampusId")
                         .HasColumnType("int");
 
@@ -434,8 +437,8 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("AddmissionDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("EnrollDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsAtive")
                         .HasColumnType("bit");

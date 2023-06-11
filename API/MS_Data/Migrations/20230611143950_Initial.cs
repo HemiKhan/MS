@@ -323,7 +323,7 @@ namespace MS_Data.Migrations
                     StudentId = table.Column<int>(type: "int", nullable: true),
                     RollNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddmissionDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EnrollDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -420,6 +420,7 @@ namespace MS_Data.Migrations
                     FeeStructureId = table.Column<int>(type: "int", nullable: true),
                     IsFeeStructure = table.Column<bool>(type: "bit", nullable: false),
                     DiscountedFee = table.Column<int>(type: "int", nullable: true),
+                    AdmissionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     StudentsId = table.Column<int>(type: "int", nullable: true),
                     IsAtive = table.Column<bool>(type: "bit", nullable: false)
                 },

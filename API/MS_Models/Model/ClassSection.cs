@@ -18,6 +18,7 @@ namespace MS_Models.Model
         public int? FeeStructureId { get; set; }
         public bool IsFeeStructure { get; set; }
         public int? DiscountedFee { get; set; }
+        public DateTime? AdmissionDate { get; set; }
 
         public Campus? Campus { get; set; }
         public Session? Session { get; set; }
