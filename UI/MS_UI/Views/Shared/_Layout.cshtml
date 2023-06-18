@@ -54,6 +54,23 @@
 
     @Html.Partial("~/Views/Shared/_vendor_scripts.cshtml")
 
+    <script>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            string errorMessage = TempData["ErrorMessage"].ToString();
+            <text>
+                toastr.error('Error', '@Html.Raw(errorMessage)');
+            </text>
+        }
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            string successMessage = TempData["SuccessMessage"].ToString()!;
+            <text>
+                toastr.success('Success', '@Html.Raw(successMessage)');
+            </text>
+        }
+    </script>
     @RenderSection("scripts", required: false)
 
 
