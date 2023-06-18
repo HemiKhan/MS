@@ -59,5 +59,34 @@ namespace MS_UI.Controllers
                 }
             }
         }
+
+        public async Task<IActionResult> DeleteSession(int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.DeleteAsync("Session/DeleteSession?SessId=" + id);
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<Response<SessionViewModel>>(Data);
+                    if (!res.Status)
+                    {
+                        TempData["ErrorMessage"] = res.Message;
+                        return Redirect($"/Session/Index");
+                    }
+                    TempData["SuccessMessage"] = res.Message;
+                    return Redirect($"/Session/Index");
+                }
+                else
+                {
+                    return Redirect($"/Session/Index");
+                }
+            }
+        }
+
     }
 }

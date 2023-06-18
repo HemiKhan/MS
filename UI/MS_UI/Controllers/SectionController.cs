@@ -55,5 +55,35 @@ namespace MS_UI.Controllers
                 }
             }
         }
+
+
+        public async Task<IActionResult> DeleteSection(int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.DeleteAsync("Section/DeleteSection?SecId="+id );
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<Response<SectionViewModel>>(Data);
+                    if (!res.Status)
+                    {
+                        TempData["ErrorMessage"] = res.Message;
+                        return Redirect($"/Section/Index");
+                    }
+                    TempData["SuccessMessage"] = res.Message;
+                    return Redirect($"/Section/Index");
+                }
+                else
+                {
+                    return Redirect($"/Section/Index");
+                }
+            }
+        }
+
     }
 }
