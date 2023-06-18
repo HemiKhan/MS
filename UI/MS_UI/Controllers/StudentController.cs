@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MS_UI.Models.AdmissionModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MS_Models.Model;
 using MS_UI.Services;
+using MS_Models.ViewModel;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace MS_UI.Controllers
 {
@@ -47,9 +49,39 @@ namespace MS_UI.Controllers
 
             return View();
         }
-        public IActionResult Admission(AdmissionViewModel model)
+
+        [HttpPost]
+        public async Task<IActionResult> Admission(AdmissionViewModel model)
         {
-            return View();
+            AdmissionViewModel admission = new AdmissionViewModel();
+            admission.StudentName = model.StudentName;
+            admission.StudentCode = model.StudentCode;
+            admission.IsActive = model.IsActive;
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.PostAsJsonAsync("Admission/Admission", admission);
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<Response<AdmissionViewModel>>(Data);
+                    if (!res.Status)
+                    {
+                        TempData["ErrorMessage"] = res.Message;
+                        return Redirect($"/Student/Index");
+                    }
+                    TempData["SuccessMessage"] = res.Message;
+                    return Redirect($"/Student/Index");
+                }
+                else
+                {
+                    return Redirect($"/Student/Index");
+                }
+            }
         }
     }
 }

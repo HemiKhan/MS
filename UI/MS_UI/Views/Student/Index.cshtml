@@ -18,7 +18,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationName">Name</label>
-                                <input type="text" class="form-control" id="validationName" placeholder="Name" value="" required>
+                                <input type="text" class="form-control" name="StudentName" id="validationName" placeholder="Name" value="" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationDob">Date of Birth</label>
-                                <input class="form-control" type="date" value="" id="validationDob">
+                                <input class="form-control" type="date" value="" id="validationDob" name="DOB">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationAdmissionDate">Admission Date</label>
-                                <input class="form-control" type="date" value="" id="validationAdmissionDate">
+                                <input class="form-control" type="date" value="" id="validationAdmissionDate" name="AdmissionDate">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -45,7 +45,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationGender">Gender</label>
-                                <select class="form-control" id="validationGender">
+                                <select class="form-control" id="validationGender" name="Gender">
                                     <option>Select Gender</option>
                                     <option>Male</option>
                                     <option>Female</option>
@@ -58,7 +58,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationPhoneNumber">PhoneNumber</label>
-                                <input class="form-control" type="tel" value="" id="validationPhoneNumber">
+                                <input class="form-control" type="tel" value="" id="validationPhoneNumber" name="PhoneNumber">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -67,7 +67,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationEmail">Email</label>
-                                <input class="form-control" type="email" value="" placeholder="Example@example.com" id="validationEmail">
+                                <input class="form-control" name="Email" type="email" value="" placeholder="Example@example.com" id="validationEmail">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -76,7 +76,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationAddress">Address</label>
-                                <input type="text" class="form-control" id="validationAddress" placeholder="Address" required>
+                                <input type="text" name="HomeAddress" class="form-control" id="validationAddress" placeholder="Address" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -85,7 +85,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationReligion">Religion</label>
-                                <input type="text" class="form-control" id="validationReligion" placeholder="Religion" required>
+                                <input type="text" name="Religion" class="form-control" id="validationReligion" placeholder="Religion" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -94,7 +94,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationPreviousSchool">Previous School</label>
-                                <input type="text" class="form-control" id="validationPreviousSchool" placeholder="Previous School" required>
+                                <input type="text" name="PreviousSchool" class="form-control" id="validationPreviousSchool" placeholder="Previous School" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -104,7 +104,7 @@
                             <div class="form-group">
                                 <label for="validationReligion">Profile Picture</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <input type="file" name="StudentImage" class="custom-file-input" id="customFile">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="validationFatherName">Father Name</label>
-                                <input type="text" class="form-control" id="validationFatherName" placeholder="Father Name" value="" required>
+                                <input type="text" name="" class="form-control" id="validationFatherName" placeholder="Father Name" value="" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -182,7 +182,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="validationGuardianName">Guardian Name</label>
-                                <input class="form-control" type="text" value="" placeholder="Guardian Name" id="validationGuardianName" required>
+                                <input class="form-control" name="GuardianName" type="text" value="" placeholder="Guardian Name" id="validationGuardianName" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -191,7 +191,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="validationGuardianProfession">Guardian Profession</label>
-                                <input class="form-control" type="text" value="" placeholder="Guardian Profession" id="validationGuardianProfession" required>
+                                <input class="form-control" name="GuardianProfession" type="text" value="" placeholder="Guardian Profession" id="validationGuardianProfession" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -201,7 +201,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="validationGuardianCNIC">Guardian CNIC</label>
-                                <input class="form-control" type="text" value="" placeholder="Guardian CNIC" id="validationGuardianCNIC" required>
+                                <input class="form-control" name="GuardianCnic" type="text" value="" placeholder="Guardian CNIC" id="validationGuardianCNIC" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -210,7 +210,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationGuardianRelation">Guardian Relation</label>
-                                <input class="form-control" type="text" value="" placeholder="Guardian Relation" id="validationGuardianRelation" required>
+                                <input class="form-control" name="GuardianRelation" type="text" value="" placeholder="Guardian Relation" id="validationGuardianRelation" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -219,7 +219,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationParentPhoneNumber">Parent Contact Number</label>
-                                <input class="form-control" type="tel" value="" id="validationParentPhoneNumber">
+                                <input class="form-control" name="ParrentContact" type="tel" value="" id="validationParentPhoneNumber">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -228,7 +228,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationAddress">Address</label>
-                                <input type="text" class="form-control" id="validationAddress" placeholder="Address" required>
+                                <input type="text" class="form-control" name="HomeAddress" id="validationAddress" placeholder="Address" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -238,7 +238,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationParentEmail">Parent Email</label>
-                                <input class="form-control" type="email" value="" placeholder="Example@example.com" id="validationParentEmail">
+                                <input class="form-control" name="ParrentEmail" type="email" value="" placeholder="Example@example.com" id="validationParentEmail">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -263,7 +263,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationStudentCode">Student Code</label>
-                                <input class="form-control" type="number" value="" id="validationStudentCode">
+                                <input class="form-control" name="StudentCode" type="number" value="" id="validationStudentCode">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -333,7 +333,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationMonthlyFee">Monthly Fee</label>
-                                <input class="form-control" type="number" value="" id="validationMonthlyFee">
+                                <input class="form-control" name="Fee" type="number" value="" id="validationMonthlyFee">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
