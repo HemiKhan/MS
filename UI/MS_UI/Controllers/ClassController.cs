@@ -21,10 +21,7 @@ namespace MS_UI.Controllers
                 return View(classData.list);
             return View();
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> a3501d614d417619153db92b0908bbe37e6970e0
         [HttpPost]
         public async Task<IActionResult> AddOrUpdateClass(ClassViewModel model)
         {
