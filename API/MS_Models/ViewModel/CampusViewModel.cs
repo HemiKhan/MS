@@ -8,6 +8,7 @@ namespace MS_Models.ViewModel
 {
     public class CampusViewModel
     {  
+        public int? CampusId { get; set; }
         public string? CampusName { get; set; }
         public int? OrganizationId { get; set; }
         public bool IsActive { get; set; }

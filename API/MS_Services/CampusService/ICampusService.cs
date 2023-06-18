@@ -13,8 +13,7 @@ namespace MS_Services.CampusService
     {
         Task<Response<Campus>> GetCampusAsync();
         Task<Response<Campus>> GetByCampusIdAsync(int CampusId);
-        Task<Response<CampusViewModel>> AddCampusAsync(CampusViewModel model);
-        Task<Response<CampusViewModel>> UpdateCampusAsync(Campus model);
+        Task<Response<CampusViewModel>> AddOrEditCampusAsync(CampusViewModel model);
         Task<Response<CampusViewModel>> DeleteCampusAsync(int CampusId);
     }
 }

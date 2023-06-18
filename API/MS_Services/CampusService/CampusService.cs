@@ -19,8 +19,7 @@ namespace MS_Services.CampusService
             this.db = db;
         }
 
-
-        public async Task<Response<CampusViewModel>> AddCampusAsync(CampusViewModel model)
+        public async Task<Response<CampusViewModel>> AddOrEditCampusAsync(CampusViewModel model)
         {
             try
             {
@@ -31,17 +30,38 @@ namespace MS_Services.CampusService
                         Status = false
                     };
 
-                Campus campus = new Campus();
-                campus.CampusName = model.CampusName;
-                campus.OrganizationId = model.OrganizationId;
-                campus.IsAtive = model.IsActive;
+                var msg = "";
 
-                await db.Campus.AddAsync(campus);
+                if (model.CampusId > 0 || model.CampusId != null)
+                {
+                    var data = await db.Campus.Where(x => x.Id == model.CampusId).FirstOrDefaultAsync();
+                    if (data is null)
+                        return new Response<CampusViewModel>
+                        {
+                            Message = "Data Not Found",
+                            Status = false
+                        };
+
+                    data.CampusName = model.CampusName;
+                    data.IsAtive = model.IsActive;
+                    db.Campus.Update(data);
+                    msg = "Campus (" + data.CampusName + ") Updated Successfully";
+                }
+                else
+                {
+                    Campus campus = new Campus();
+                    campus.CampusName = model.CampusName;
+                    campus.OrganizationId = model.OrganizationId;
+                    campus.IsAtive = model.IsActive;
+                    await db.Campus.AddAsync(campus);
+                    msg = "Campus (" + campus.CampusName + ") Added Successfully";
+                }
+
                 await db.SaveChangesAsync();
 
                 return new Response<CampusViewModel>
                 {
-                    Message = "Campus Added Successfully",
+                    Message = msg,
                     Status = true
                 };
             }
@@ -134,44 +154,6 @@ namespace MS_Services.CampusService
                     Message = "Data Found Successfully",
                     Status = true,
                     List = data
-                };
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public async Task<Response<CampusViewModel>> UpdateCampusAsync(Campus model)
-        {
-            try
-            {
-                if (model.Id == 0)
-                    return new Response<CampusViewModel>
-                    {
-                        Message = "Campus Id Not Found",
-                        Status = false
-                    };
-
-                var data = await db.Campus.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
-                if (data is null)
-                    return new Response<CampusViewModel>
-                    {
-                        Message = "Data Not Found",
-                        Status = false
-                    };
-                
-                data.CampusName = model.CampusName;
-                data.OrganizationId = model.OrganizationId;
-                data.IsAtive = model.IsAtive;
-
-                db.Campus.Update(data);
-                await db.SaveChangesAsync();
-
-                return new Response<CampusViewModel>
-                {
-                    Message = "Campus Updated Successfully",
-                    Status = true
                 };
             }
             catch (Exception)

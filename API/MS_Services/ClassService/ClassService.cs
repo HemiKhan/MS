@@ -20,7 +20,7 @@ namespace MS_Services.ClassService
         }
 
 
-        public async Task<Response<ClassViewModel>> AddClassAsync(ClassViewModel model)
+        public async Task<Response<ClassViewModel>> AddOrEditClassAsync(ClassViewModel model)
         {
             try
             {
@@ -31,15 +31,36 @@ namespace MS_Services.ClassService
                         Status = false
                     };
 
-                Class classes = new Class();
-                classes.ClassName = model.ClassName;
+                var msg = "";
 
-                await db.Class.AddAsync(classes);
+                if (model.ClassId > 0 || model.ClassId != null)
+                {
+                    var data = await db.Class.Where(x => x.Id == model.ClassId).FirstOrDefaultAsync();
+                    if (data is null)
+                        return new Response<ClassViewModel>
+                        {
+                            Message = "Data Not Found",
+                            Status = false
+                        };
+
+                    data.ClassName = model.ClassName;
+                    data.IsAtive = model.IsActive;
+                    db.Class.Update(data);
+                    msg = "Class (" + data.ClassName + ") Updated Successfully";
+                }
+                else
+                {
+                    Class classes = new Class();
+                    classes.ClassName = model.ClassName;
+                    await db.Class.AddAsync(classes);
+                    msg = "Class (" + classes.ClassName + ") Added Successfully";
+                }
+
                 await db.SaveChangesAsync();
 
                 return new Response<ClassViewModel>
                 {
-                    Message = "Class Added Successfully",
+                    Message = msg,
                     Status = true
                 };
             }
@@ -132,43 +153,6 @@ namespace MS_Services.ClassService
                     Message = "Data Found Successfully",
                     Status = true,
                     List = data
-                };
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public async Task<Response<ClassViewModel>> UpdateClassAsync(Class model)
-        {
-            try
-            {
-                if (model.Id == 0)
-                    return new Response<ClassViewModel>
-                    {
-                        Message = "Class Id Not Found",
-                        Status = false
-                    };
-
-                var data = await db.Class.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
-                if (data is null)
-                    return new Response<ClassViewModel>
-                    {
-                        Message = "Data Not Found",
-                        Status = false
-                    };
-
-                data.ClassName = model.ClassName;
-                data.IsAtive = model.IsAtive;
-
-                db.Class.Update(data);
-                await db.SaveChangesAsync();
-
-                return new Response<ClassViewModel>
-                {
-                    Message = "Class Updated Successfully",
-                    Status = true
                 };
             }
             catch (Exception)
