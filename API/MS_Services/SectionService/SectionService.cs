@@ -3,11 +3,6 @@ using MS_Data.AppContext;
 using MS_Models.Common;
 using MS_Models.Model;
 using MS_Models.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MS_Services.SectionService
 {
@@ -19,35 +14,55 @@ namespace MS_Services.SectionService
             this.db = db;
         }
 
-
-        public async Task<Response<SectionViewModel>> AddSectionAsync(SectionViewModel model)
+        public async Task<Response<SectionViewModel>> AddOrEditSectionAsync(SectionViewModel model)
         {
             try
             {
                 if (string.IsNullOrWhiteSpace(model.SectionName))
                     return new Response<SectionViewModel>
                     {
-                        Message = "Section Name Not Found",
+                        Message = "SectionName Name Not Found",
                         Status = false
                     };
 
-                Section sec = new Section();
-                sec.SectionName = model.SectionName;
-                sec.IsAtive = model.IsActive;
+                var msg = "";
 
-                await db.Sections.AddAsync(sec);
+                if (model.SectionId > 0 || model.SectionId != null)
+                {
+                    var data = await db.Sections.Where(x => x.Id == model.SectionId).FirstOrDefaultAsync();
+                    if (data is null)
+                        return new Response<SectionViewModel>
+                        {
+                            Message = "Data Not Found",
+                            Status = false
+                        };
+
+                    data.SectionName = model.SectionName;
+                    data.IsAtive = model.IsActive;
+                    db.Sections.Update(data);
+                    msg = "Section (" + data.SectionName + ") Updated Successfully";
+                }
+                else
+                {
+                    Section secs = new Section();
+                    secs.SectionName = model.SectionName;
+                    secs.IsAtive = model.IsActive;
+                    await db.Sections.AddAsync(secs);
+                    msg = "Section (" + secs.SectionName + ") Added Successfully";
+                }
+
                 await db.SaveChangesAsync();
 
                 return new Response<SectionViewModel>
                 {
-                    Message = "Section Added Successfully",
+                    Message = msg,
                     Status = true
                 };
             }
             catch (Exception)
             {
                 throw;
-            }
+            }            
         }
 
         public async Task<Response<SectionViewModel>> DeleteSectionAsync(int SecId)
@@ -133,43 +148,6 @@ namespace MS_Services.SectionService
                     Message = "Data Found Successfully",
                     Status = true,
                     List = data
-                };
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public async Task<Response<SectionViewModel>> UpdateSectionAsync(Section model)
-        {
-            try
-            {
-                if (model.Id == 0)
-                    return new Response<SectionViewModel>
-                    {
-                        Message = "Section Id Not Found",
-                        Status = false
-                    };
-
-                var data = await db.Sections.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
-                if (data is null)
-                    return new Response<SectionViewModel>
-                    {
-                        Message = "Data Not Found",
-                        Status = false
-                    };
-
-                data.SectionName = model.SectionName;
-                data.IsAtive = model.IsAtive;
-
-                db.Sections.Update(data);
-                await db.SaveChangesAsync();
-
-                return new Response<SectionViewModel>
-                {
-                    Message = "Section (" + data.SectionName + ") Updated Successfully",
-                    Status = true
                 };
             }
             catch (Exception)

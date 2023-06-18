@@ -42,25 +42,12 @@ namespace MS_App.Controllers
             return BadRequest("Some properties are not valid");
         }
 
-        [HttpPost("AddSection")]
-        public async Task<IActionResult> AddSection(SectionViewModel model)
+        [HttpPost("AddOrEditSection")]
+        public async Task<IActionResult> AddOrEditSection(SectionViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = await secService.AddSectionAsync(model);
-                if (result.Status)
-                    return Ok(result);
-                return Ok(result);
-            }
-            return BadRequest("Some properties are not valid");
-        }
-
-        [HttpPut("UpdateSection")]
-        public async Task<IActionResult> UpdateSection(Section model)
-        {
-            if (ModelState.IsValid)
-            {
-                var result = await secService.UpdateSectionAsync(model);
+                var result = await secService.AddOrEditSectionAsync(model);
                 if (result.Status)
                     return Ok(result);
                 return Ok(result);
