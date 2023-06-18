@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-<<<<<<< HEAD
 using MS_UI.Models.AdmissionModels;
-=======
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MS_Models.Model;
 using MS_UI.Services;
->>>>>>> 8371befad9fe2e7f5ebc8e879caf73081cfddc8f
 
 namespace MS_UI.Controllers
 {
