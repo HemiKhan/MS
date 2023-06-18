@@ -56,13 +56,19 @@ namespace MS_UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Admission(AdmissionViewModel model)
         {
+            var base64String = await commonService.GetBase64StringFromImage(model.StudentImageUpload);
             AdmissionViewModel admission = new AdmissionViewModel();
+
+            if (base64String != null)
+            {
+                admission.StudentImage = base64String;
+            }
             admission.StudentName = model.StudentName;
             admission.StudentCode = model.StudentCode;
             admission.Email = model.Email;
             admission.Address = model.Address;
             admission.Religion = model.Religion;
-            admission.StudentImage = model.StudentImage;
+            
             admission.PreviousSchool = model.PreviousSchool;
             admission.FatherName = model.FatherName;
             admission.FatherProfession = model.FatherProfession;

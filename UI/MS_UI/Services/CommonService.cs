@@ -140,5 +140,24 @@ namespace MS_UI.Services
             }
         }
 
+        public async Task<string> GetBase64StringFromImage(IFormFile imageFile)
+        {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await imageFile.CopyToAsync(memoryStream);
+
+                    // Convert the file to Base64
+                    var base64String = Convert.ToBase64String(memoryStream.ToArray());
+
+                    return base64String;
+                }
+            }
+
+            return null;
+        }
+
+
     }
 }
