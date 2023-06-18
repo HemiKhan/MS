@@ -47,20 +47,7 @@ namespace MS_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await classService.AddClassAsync(model);
-                if (result.Status)
-                    return Ok(result);
-                return Ok(result);
-            }
-            return BadRequest("Some properties are not valid");
-        }
-
-        [HttpPut("UpdateClass")]
-        public async Task<IActionResult> UpdateClass(Class model)
-        {
-            if (ModelState.IsValid)
-            {
-                var result = await classService.UpdateClassAsync(model);
+                var result = await classService.AddOrEditClassAsync(model);
                 if (result.Status)
                     return Ok(result);
                 return Ok(result);

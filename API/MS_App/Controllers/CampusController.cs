@@ -47,20 +47,7 @@ namespace MS_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await campusService.AddCampusAsync(model);
-                if (result.Status)
-                    return Ok(result);
-                return Ok(result);
-            }
-            return BadRequest("Some properties are not valid");
-        }
-
-        [HttpPut("UpdateCampus")]
-        public async Task<IActionResult> UpdateCampus(Campus model)
-        {
-            if (ModelState.IsValid)
-            {
-                var result = await campusService.UpdateCampusAsync(model);
+                var result = await campusService.AddOrEditCampusAsync(model);
                 if (result.Status)
                     return Ok(result);
                 return Ok(result);

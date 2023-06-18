@@ -13,8 +13,7 @@ namespace MS_Services.ClassService
     {
         Task<Response<Class>> GetClassAsync();
         Task<Response<Class>> GetByClassIdAsync(int ClassId);
-        Task<Response<ClassViewModel>> AddClassAsync(ClassViewModel model);
-        Task<Response<ClassViewModel>> UpdateClassAsync(Class model);
+        Task<Response<ClassViewModel>> AddOrEditClassAsync(ClassViewModel model);
         Task<Response<ClassViewModel>> DeleteClassAsync(int ClassId);
     }
 }
