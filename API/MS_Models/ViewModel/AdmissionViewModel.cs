@@ -14,7 +14,6 @@ namespace MS_Models.ViewModel
         public string? Email { get; set; }
         public string? Address { get; set; }
         public string? Religion { get; set; }
-        public string? StudentAddress { get; set; }
         public string? StudentImage { get; set; }
         public IFormFile? StudentImageUpload { get; set; }
         public string? PreviousSchool { get; set; }

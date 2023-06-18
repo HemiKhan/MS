@@ -16,5 +16,6 @@ namespace MS_Services.FeeStrutureService
         Task<Response<FeeStructureViewModel>> AddFeeStructureAsync(FeeStructureViewModel model);
         Task<Response<FeeStructureViewModel>> UpdateFeeStructureAsync(FeeStructure model);
         Task<Response<FeeStructureViewModel>> DeleteFeeStructureAsync(int FeeId);
+        Task<Response<GetFeeStructureViewModel>> GetFeeAsync(int CampusId, int SessionId, int SectionId, int ClassId);
     }
 }

@@ -15,4 +15,10 @@ namespace MS_Models.ViewModel
         public int? Fee { get; set; }
         public bool IsActive { get; set; }
     }
+
+    public class GetFeeStructureViewModel
+    {
+        public int? FeeId { get; set; }
+        public int? Fee { get; set; }
+    }
 }
