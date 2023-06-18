@@ -55,14 +55,14 @@
                                 <tr>
                                     <td>@i</td>
                                     <td hidden><span class="ClassId">@item.Id</span></td>
-                                    <td><span class="SessName">@item.ClassName</span></td>
+                                    <td><span class="Classname">@item.ClassName</span></td>
                                     <td>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input rbIsActive" id="customCheckcolor1" @(item.IsAtive ? "checked" : "")>
                                             <label class="custom-control-label" for="customCheckcolor1"></label>
                                         </div>
                                     </td>
-                                    <td><i class="fa fa-edit text-primary cursor-pointer" data-toggle="modal" data-target=".addeditClass"></i> <a href="@Url.Action("DeleteClass", "Class", new { id = item.Id })" class="fa fa-trash text-danger cursor-pointer"></a></td>
+                                    <td><i class="fa fa-edit text-primary cursor-pointer ClassEdit" data-toggle="modal" data-target=".addeditClass"></i> <a href="@Url.Action("DeleteClass", "Class", new { id = item.Id })" class="fa fa-trash text-danger cursor-pointer"></a></td>
                                 </tr>
                                 i++;
                             }
@@ -94,7 +94,7 @@
 
                                 <label for="example-text-input" class="col-md-12 col-form-label">Class Name *</label>
                                 <div class="col-md-12">
-                                        <input class="form-control mt-2 txtClassname" type="text" value="" name="ClassName" id="example-text-input">
+                                        <input class="form-control mt-2 Classname" type="text" value="" name="ClassName" id="txtClassName">
                                 </div>
 
                                 <label for="example-text-input" class="col-md-12 col-form-label">isActive</label>
@@ -150,12 +150,12 @@
                 $(this).val(this.checked.toString());
             });
 
-            $('.SectionEdit').on('click', function () {
-                var SecId = $(this).closest('tr').find('.SecId').text();
-                var SecName = $(this).closest('tr').find('.SecName').text();
+            $('.ClassEdit').on('click', function () {
+                var ClassId = $(this).closest('tr').find('.ClassId').text();
+                var ClassName = $(this).closest('tr').find('.Classname').text();
                 var IsActive = $(this).closest('tr').find('.rbIsActive').prop("checked");
-                $('#txtSectionid').val(SecId);
-                $('#txtSectionname').val(SecName);
+                $('#txtClassId').val(ClassId);
+                $('#txtClassName').val(ClassName);
                 $('#rbIsActive').prop("checked", IsActive);
             });
         });
