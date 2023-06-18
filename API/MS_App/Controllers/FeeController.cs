@@ -43,7 +43,7 @@ namespace MS_App.Controllers
             return BadRequest("Some properties are not valid");
         }
 
-        [HttpDelete("GetFee")]
+        [HttpGet("GetFee")]
         public async Task<IActionResult> GetFee(int CampusId, int SessionId, int SectionId, int ClassId)
         {
             if (ModelState.IsValid)

@@ -120,5 +120,55 @@ namespace MS_UI.Controllers
                 }
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetFees(int campusId, int sessionId, int classId, int sectionId)
+        {
+            try
+            {
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.BaseAddress = Constrant.AppUrl;
+                        client.DefaultRequestHeaders.Accept.Clear();
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                        //Get Method
+                        HttpResponseMessage response = await client.GetAsync("Fee/GetFee?CampusId="+campusId+"&SessionId="+sessionId+"&SectionId="+sectionId+"&ClassId="+classId);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var responseData = await response.Content.ReadAsStringAsync();
+                            var result = JsonConvert.DeserializeObject<Response<GetFeeStructureViewModel>>(responseData);
+                            if (!result!.Status)
+
+                                return Json(result);
+                            //return (message: result.Message, list: null);
+                            return Json(result);
+
+                            //return (message: result.Message, list: result.List!);
+                        }
+                        else
+                        {
+                            return Json("sd");
+                            //return (message: "Internal server error occurred.", list: null);
+                        }
+                    }
+                    return Json("sd");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            catch (Exception)
+            {
+                // Handle any exceptions that occur during the process
+                return StatusCode(StatusCodes.Status500InternalServerError, "Internal server error occurred.");
+            }
+        }
+
+
     }
 }

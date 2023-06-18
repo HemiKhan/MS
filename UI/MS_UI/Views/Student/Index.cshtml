@@ -330,10 +330,12 @@
                 <h4 class="card-title">Other Information</h4>
                     <div class="row">
 
+                                <input class="form-control" name="FeeStructureId" type="hidden" value="" id="MonthlyFeeid" readonly>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationMonthlyFee">Monthly Fee</label>
-                                <input class="form-control" name="Fee" type="number" value="" id="validationMonthlyFee">
+                                <input class="form-control" name="Fee" type="number" value="" id="validationMonthlyFee" readonly>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -343,10 +345,10 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationDiscountedStudent">Discounted Student</label>
-                                <select class="form-control" id="validationDiscountedStudent">
+                                <select class="form-control" name="IsFeeStructure" id="validationDiscountedStudent">
                                     <option>Select Discounted Student</option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="True">Yes</option>
+                                    <option value="False">No</option>
                                 </select>
                                 <div class="valid-feedback">
                                     Looks good!
@@ -354,7 +356,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6" id="discountedPriceContainer" style="display: none;">
+                       @* <div class="col-md-6" id="discountedPriceContainer" style="display: none;">
                             <div class="form-group">
                                 <label for="validationDiscountedPrice">Discounted Price</label>
                                 <input class="form-control" type="number" value="" id="validationDiscountedPrice">
@@ -362,7 +364,7 @@
                                     Looks good!
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
 
                     </div>
                    
@@ -390,15 +392,53 @@
         $(document).ready(function () {
             // Add change event listener to the Discounted Student dropdown
             $('#validationDiscountedStudent').change(function () {
+                debugger;
                 var selectedValue = $(this).val();
 
-                // Show/hide the Discounted Price field based on the selected value
-                if (selectedValue === 'Yes') {
-                    $('#discountedPriceContainer').show();
-                } else {
-                    $('#discountedPriceContainer').hide();
+                 //Show/hide the Discounted Price field based on the selected value
+                if (selectedValue === 'True') {
+                    getfees();
+                    $("#validationMonthlyFee").prop("readonly", true);
+                } else if(selectedValue === 'False') {
+                    $("#validationMonthlyFee").prop("readonly", false);
                 }
             });
+            function getfees() {
+                debugger;
+
+    var campusId = $("#validationCampus").val();
+    var sessionId = $("#validationSession").val();
+    var classId = $("#validationClass").val();
+    var sectionId = $("#validationSection").val();
+
+    $.ajax({
+        url: '/Student/GetFees',
+        type: 'GET',
+        data: {
+            CampusId: campusId,
+            SessionId: sessionId,
+            ClassId: classId,
+            SectionId: sectionId
+        },
+        dataType: 'json',
+        success: function (response) {
+            debugger;
+            if(response.status ==true)
+            {
+                 $("#validationMonthlyFee").val(response.data.fee);
+                  $("#MonthlyFeeid").val(response.data.feeId);
+            }
+            else(
+                toastr.error(response.message)
+            )
+            // Rest of the code remains the same
+        },
+        error: function () {
+            // Rest of the code remains the same
+        }
+    });
+}
+
 
             function generateRandomCode() {
                 var min = 10000; // Minimum value for the code (inclusive)

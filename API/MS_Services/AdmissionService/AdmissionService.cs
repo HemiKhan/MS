@@ -32,6 +32,7 @@ namespace MS_Services.AdmissionService
                 std.PhoneNo = model.PhoneNumber;
                 std.Email = model.Email;
                 std.Address = model.Address;
+                std.Religion = model.Religion;
                 if (model.StudentImage is not null || model.StudentImage != "")
                 {
                     std.StudentImage = model.StudentImage;
@@ -68,6 +69,7 @@ namespace MS_Services.AdmissionService
                 ClassSection classSection = new ClassSection();
                 classSection.ClassId = model.ClassId;
                 classSection.SessionId = model.SessionId;
+                classSection.SectionId = model.SectionId;
                 classSection.CampusId = model.CampusId;
                 classSection.StudentId = stdId;
                 classSection.AdmissionDate = model.AdmissionDate;
