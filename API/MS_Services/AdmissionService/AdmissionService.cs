@@ -80,6 +80,9 @@ namespace MS_Services.AdmissionService
                 {
                     classSection.FeeStructureId = model.FeeStructureId;
                 }
+                await db.ClassSections.AddAsync(classSection);
+
+                await db.SaveChangesAsync();
 
                 return new Response<AdmissionViewModel>
                 {
@@ -92,24 +95,28 @@ namespace MS_Services.AdmissionService
 
                 throw;
             }
-        }        
+        }
 
         public async Task<Response<AdmissionViewModel>> ViewAdmissionAsync()
         {
             try
             {
+                List<AdmissionViewModel> res = new List<AdmissionViewModel>();
                 var data = await db.ClassSections
-                    .Include(c => c.Campus)
-                    .Include(sess => sess.Session)
-                    .Include(sec => sec.Section)
-                    .Include(cls => cls.Class)
-                    .Include(std => std.Students)
-                    .Include(std_detail => std_detail.Students.StudentDetail)
-                    .Select(s => new AdmissionViewModel
-                    {
-                        StudentCode = std.StudentCode,
-                    })
-                    .ToListAsync();
+                                   .Include(c => c.Campus)
+                                   .Include(sess => sess.Session)
+                                   .Include(sec => sec.Section)
+                                   .Include(cls => cls.Class)
+                                   .Include(std => std.Students)
+                                   .Include(std_detail => std_detail.Students)
+                                   .ToListAsync();
+
+                foreach (var item in data)
+                {
+                    AdmissionViewModel admission = new AdmissionViewModel();
+                    admission.StudentName = item.Students!.Name;
+                    res.Add(admission);
+                }
 
                 return new Response<AdmissionViewModel>
                 {

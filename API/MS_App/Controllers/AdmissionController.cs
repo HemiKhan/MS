@@ -28,5 +28,18 @@ namespace MS_App.Controllers
             }
             return BadRequest("Some properties are not valid");
         }
+
+        [HttpPost("ViewAdmission")]
+        public async Task<IActionResult> ViewAdmission()
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await admissionService.ViewAdmissionAsync();
+                if (result.Status)
+                    return Ok(result);
+                return Ok(result);
+            }
+            return BadRequest("Some properties are not valid");
+        }
     }
 }
