@@ -66,6 +66,7 @@ namespace MS_Services.AdmissionService
                 classSection.SessionId = model.SessionId;
                 classSection.CampusId = model.CampusId;
                 classSection.StudentId = stdId;
+                classSection.AdmissionDate = DateTime.Now;
                 classSection.IsFeeStructure = model.IsFeeStructure;
                 if (model.IsFeeStructure == false)
                 {

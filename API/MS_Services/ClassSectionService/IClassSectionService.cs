@@ -13,7 +13,7 @@ namespace MS_Services.ClassSectionService
     {
         Task<Response<ClassSectionViewModel>> GetClassSectionAsync();
         Task<Response<ClassSectionViewModel>> GetByClassSectionIdAsync(int ClassSecId);
-        Task<Response<ClassSectionViewModel>> AddClassSectionAsync(ClassSectionViewModel model);
+        Task<Response<AddClassSectionViewModel>> AddClassSectionAsync(AddClassSectionViewModel model);
         Task<Response<ClassSectionViewModel>> UpdateClassSectionAsync(ClassSection model);
         Task<Response<ClassSectionViewModel>> DeleteClassSectionAsync(int ClassSecId);
     }

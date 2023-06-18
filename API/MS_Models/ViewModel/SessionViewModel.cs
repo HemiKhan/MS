@@ -8,6 +8,7 @@ namespace MS_Models.ViewModel
 {
     public class SessionViewModel
     {
+        public int? SessionId { get; set; }
         public string? SessionName { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }

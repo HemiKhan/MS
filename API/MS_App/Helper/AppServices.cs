@@ -1,5 +1,8 @@
 ﻿using MS_Services.Account;
+using MS_Services.AdmissionService;
 using MS_Services.CampusService;
+using MS_Services.ClassSectionService;
+using MS_Services.ClassService;
 using MS_Services.FeeStrutureService;
 using MS_Services.Mail;
 using MS_Services.OrganizationService;
@@ -17,7 +20,10 @@ namespace MS_App.Helper
             appservices.AddTransient<ICampusService, CampusService>();
             appservices.AddTransient<ISessionService, SessionService>();
             appservices.AddTransient<ISectionService, SectionService>();
+            appservices.AddTransient<IClassService, ClassService>();
+            appservices.AddTransient<IClassSectionService, ClassSectionService>();
             appservices.AddTransient<IFeeStrutureService, FeeStrutureService>();
+            appservices.AddTransient<IAdmissionService, AdmissionService>();
 
             appservices.AddTransient<ISeedService, SeedService>();
             appservices.AddTransient<IAccountService, AccountService>();

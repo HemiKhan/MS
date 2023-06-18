@@ -13,8 +13,7 @@ namespace MS_Services.SessionService
     {
         Task<Response<Session>> GetSessionAsync();
         Task<Response<Session>> GetBySessionIdAsync(int SessId);
-        Task<Response<SessionViewModel>> AddSessionAsync(SessionViewModel model);
-        Task<Response<SessionViewModel>> UpdateSessionAsync(Session model);
+        Task<Response<SessionViewModel>> AddOrUpdateSessionAsync(SessionViewModel model);
         Task<Response<SessionViewModel>> DeleteSessionAsync(int SessId);
     }
 }

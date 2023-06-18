@@ -274,11 +274,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationCampus">Campus</label>
-                                <select class="form-control" id="validationCampus">
-                                    <option>Select Campus</option>
-                                    <option>Main Campus</option>
-                                    <option>Second Campus</option>
-                                </select>
+                                @if (ViewBag.Campus != null)
+                                    @Html.DropDownList("Campus", ViewBag.Campus as SelectList, new { @class = "form-control validationCampus", id = "validationCampus" })
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -288,27 +285,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationSession">Session</label>
-                                <select class="form-control" id="validationSession">
-                                    <option>Select Session</option>
-                                    <option>2017-2021  </option>
-                                    <option>2018-2023</option>
-                                </select>
+                                    @if (ViewBag.Session != null)
+                                        @Html.DropDownList("Session", ViewBag.Session as SelectList, new { @class = "form-control validationSession", id = "validationSession" })
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
-                        </div>
-
-                       
+                        </div>                                             
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationClass">Class</label>
-                                <select class="form-control" id="validationClass">
-                                    <option>Select Class</option>
-                                    <option>9th </option>
-                                    <option>10th</option>
-                                </select>
+                                    @if (ViewBag.Class != null)
+                                    @Html.DropDownList("Class", ViewBag.Class as SelectList, new { @class = "form-control validationClass", id = "validationClass" })
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -318,11 +307,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="validationSection">Section</label>
-                                <select class="form-control" id="validationSection">
-                                    <option>Select Section</option>
-                                    <option>A  </option>
-                                    <option>B</option>
-                                </select>
+                                    @if (ViewBag.Section != null)
+                                        @Html.DropDownList("Section", ViewBag.Section as SelectList, new { @class = "form-control validationSection", id = "validationSection" })
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>

@@ -42,32 +42,19 @@ namespace MS_App.Controllers
             return BadRequest("Some properties are not valid");
         }
 
-        [HttpPost("AddSession")]
-        public async Task<IActionResult> AddSession(SessionViewModel model)
+        [HttpPost("AddOrUpdateSession")]
+        public async Task<IActionResult> AddOrUpdateSession(SessionViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = await sessService.AddSessionAsync(model);
+                var result = await sessService.AddOrUpdateSessionAsync(model);
                 if (result.Status)
                     return Ok(result);
                 return Ok(result);
             }
             return BadRequest("Some properties are not valid");
         }
-
-        [HttpPut("UpdateSession")]
-        public async Task<IActionResult> UpdateSession(Session model)
-        {
-            if (ModelState.IsValid)
-            {
-                var result = await sessService.UpdateSessionAsync(model);
-                if (result.Status)
-                    return Ok(result);
-                return Ok(result);
-            }
-            return BadRequest("Some properties are not valid");
-        }
-
+        
         [HttpDelete("DeleteSession")]
         public async Task<IActionResult> DeleteSession(int SessId)
         {
