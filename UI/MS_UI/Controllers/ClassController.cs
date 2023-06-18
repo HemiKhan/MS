@@ -21,7 +21,6 @@ namespace MS_UI.Controllers
                 return View(classData.list);
             return View();
         }
-<<<<<<< HEAD
         [HttpPost]
         public async Task<IActionResult> AddOrUpdateClass(ClassViewModel model)
         {
@@ -36,7 +35,7 @@ namespace MS_UI.Controllers
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 //POST Method
-                HttpResponseMessage response = await client.PostAsJsonAsync("Class/AddOrUpdateClass", clas);
+                HttpResponseMessage response = await client.PostAsJsonAsync("Class/AddClass", clas);
                 if (response.IsSuccessStatusCode)
                 {
                     var Data = await response.Content.ReadAsStringAsync();
@@ -83,9 +82,5 @@ namespace MS_UI.Controllers
                 }
             }
         }
-=======
-
-
->>>>>>> 79bf2b46fea20c2c59f41808a898ac452a734169
     }
 }

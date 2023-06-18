@@ -52,6 +52,7 @@ namespace MS_Services.ClassService
                 {
                     Class classes = new Class();
                     classes.ClassName = model.ClassName;
+                    classes.IsAtive = model.IsActive;
                     await db.Class.AddAsync(classes);
                     msg = "Class (" + classes.ClassName + ") Added Successfully";
                 }
