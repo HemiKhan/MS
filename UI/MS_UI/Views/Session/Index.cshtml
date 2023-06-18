@@ -63,7 +63,7 @@
                                             <label class="custom-control-label" for="customCheckcolor1"></label>
                                         </div>
                                     </td>
-                                    <td><i class="fa fa-edit text-primary cursor-pointer SessionEdit" data-toggle="modal" data-target=".addeditSession"></i> <i class="fa fa-trash text-danger cursor-pointer"></i></td>
+                                    <td><i class="fa fa-edit text-primary cursor-pointer SessionEdit" data-toggle="modal" data-target=".addeditSession"></i> <a href="@Url.Action("DeleteSession", "Session", new { id = item.Id })" class="fa fa-trash text-danger cursor-pointer"></a> </td>
                                 </tr>
                                 i++;
                             }
@@ -158,25 +158,12 @@
     <script src="~/assets/js/app.js"></script>
 
     <script>
-        @if (TempData["ErrorMessage"] != null)
-        {
-            string errorMessage = TempData["ErrorMessage"].ToString();
-            <text>
-                    toastr.error('Error', '@Html.Raw(errorMessage)');
-            </text>
-        }
-
-        @if (TempData["SuccessMessage"] != null)
-        {
-            string successMessage = TempData["SuccessMessage"].ToString()!;
-            <text>
-                    toastr.success('Success', '@Html.Raw(successMessage)');
-            </text>
-        }
+     
 
         $(document).ready(function () {
 
             function FormatedDate(date) {
+                debugger;
                 var dateStr = date; // Your date string
                 var parts = dateStr.split('-');
                 var day = parseInt(parts[0]);
@@ -186,7 +173,7 @@
                     "Jan": 0, "Feb": 1, "Mar": 2, "Apr": 3, "May": 4, "Jun": 5,
                     "Jul": 6, "Aug": 7, "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11
                 };
-                var formattedDate = new Date(year, monthNumber[month], day).toISOString().split('T')[0];
+                var formattedDate = new Date(year, monthNumber[month], day+1).toISOString().split('T')[0];
 
                 return formattedDate;
             }
