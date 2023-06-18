@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MS_UI.Models.AdmissionModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MS_Models.Model;
 using MS_UI.Services;
+using MS_Models.ViewModel;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using MS_UI.Models.Common;
 
 
 
@@ -49,9 +52,67 @@ namespace MS_UI.Controllers
 
             return View();
         }
-        public IActionResult Admission(AdmissionViewModel model)
+
+        [HttpPost]
+        public async Task<IActionResult> Admission(AdmissionViewModel model)
         {
-            return View();
+            AdmissionViewModel admission = new AdmissionViewModel();
+            admission.StudentName = model.StudentName;
+            admission.StudentCode = model.StudentCode;
+            admission.Email = model.Email;
+            admission.Address = model.Address;
+            admission.Religion = model.Religion;
+            admission.StudentImage = model.StudentImage;
+            admission.PreviousSchool = model.PreviousSchool;
+            admission.FatherName = model.FatherName;
+            admission.FatherProfession = model.FatherProfession;
+            admission.FatherCnic = model.FatherCnic;
+            admission.MotherName = model.MotherName;
+            admission.MotherProfession = model.MotherProfession;
+            admission.MotherCnic = model.MotherCnic;
+            admission.GuardianName = model.GuardianName;
+            admission.GuardianProfession = model.GuardianProfession;
+            admission.GuardianCnic = model.GuardianCnic;
+            admission.GuardianRelation = model.GuardianRelation;
+            admission.DOB = model.DOB;
+            admission.AdmissionDate = model.AdmissionDate;
+            admission.Gender = model.Gender;
+            admission.PhoneNumber = model.PhoneNumber;
+            admission.ParrentContact = model.ParrentContact;
+            admission.HomeAddress = model.HomeAddress;
+            admission.ParrentEmail = model.ParrentEmail;
+            admission.CampusId = model.CampusId;
+            admission.SessionId = model.SessionId;
+            admission.SectionId = model.SectionId;
+            admission.ClassId = model.ClassId;
+            admission.FeeStructureId = model.FeeStructureId;
+            admission.IsFeeStructure = model.IsFeeStructure;
+            admission.Fee = model.Fee;
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.PostAsJsonAsync("Admission/Admission", admission);
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var res = JsonConvert.DeserializeObject<Response<AdmissionViewModel>>(Data);
+                    if (!res.Status)
+                    {
+                        TempData["ErrorMessage"] = res.Message;
+                        return Redirect($"/Student/Index");
+                    }
+                    TempData["SuccessMessage"] = res.Message;
+                    return Redirect($"/Student/Index");
+                }
+                else
+                {
+                    return Redirect($"/Student/Index");
+                }
+            }
         }
     }
 }
