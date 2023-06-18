@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using MS_Data.AppContext;
 using MS_Models.Common;
 using MS_Models.Model;
@@ -31,7 +32,10 @@ namespace MS_Services.AdmissionService
                 std.PhoneNo = model.PhoneNumber;
                 std.Email = model.Email;
                 std.Address = model.Address;
-                std.StudentImage = model.StudentImage;
+                if (model.StudentImage is not null || model.StudentImage != "")
+                {
+                    std.StudentImage = model.StudentImage;
+                }
                 std.PreviousSchool = model.PreviousSchool;
                 std.CreatedDate = DateTime.Now;
                 std.UpdatedDate = DateTime.Now;
@@ -86,6 +90,35 @@ namespace MS_Services.AdmissionService
             catch (Exception)
             {
 
+                throw;
+            }
+        }        
+
+        public async Task<Response<AdmissionViewModel>> ViewAdmissionAsync()
+        {
+            try
+            {
+                var data = await db.ClassSections
+                    .Include(c => c.Campus)
+                    .Include(sess => sess.Session)
+                    .Include(sec => sec.Section)
+                    .Include(cls => cls.Class)
+                    .Include(std => std.Students)
+                    .Include(std_detail => std_detail.Students.StudentDetail)
+                    .Select(s => new AdmissionViewModel
+                    {
+                        StudentCode = std.StudentCode,
+                    })
+                    .ToListAsync();
+
+                return new Response<AdmissionViewModel>
+                {
+                    Message = "Data Found Successfully",
+                    Status = true,
+                };
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

@@ -206,5 +206,62 @@ namespace MS_Services.FeeStrutureService
                 throw;
             }
         }
+
+        public async Task<Response<GetFeeStructureViewModel>> GetFeeAsync(int CampusId, int SessionId, int SectionId, int ClassId)
+        {
+            try
+            {
+                if (CampusId == 0)
+                    return new Response<GetFeeStructureViewModel>
+                    {
+                        Message = "Campus Id Not Found",
+                        Status = false
+                    };
+
+                if (SessionId == 0)
+                    return new Response<GetFeeStructureViewModel>
+                    {
+                        Message = "Session Id Not Found",
+                        Status = false
+                    };
+
+                if (SectionId == 0)
+                    return new Response<GetFeeStructureViewModel>
+                    {
+                        Message = "Section Id Not Found",
+                        Status = false
+                    };
+
+                if (ClassId == 0)
+                    return new Response<GetFeeStructureViewModel>
+                    {
+                        Message = "Class Id Not Found",
+                        Status = false
+                    };
+
+                var data = await db.FeeStructures
+                    .Where(x => x.CampusId == CampusId && x.SessionId == SessionId && x.SectionId == SectionId && x.ClassId == ClassId)
+                    .Select(s => new GetFeeStructureViewModel { FeeId = s.Id, Fee = s.Fee })
+                    .FirstOrDefaultAsync();
+
+                if (data is null)
+                    return new Response<GetFeeStructureViewModel>
+                    {
+                        Message = "Data Not Found",
+                        Status = false
+                    };
+
+                return new Response<GetFeeStructureViewModel>
+                {
+                    Message = "Data Found Successfully",
+                    Status = true,
+                    Data = data
+                };
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

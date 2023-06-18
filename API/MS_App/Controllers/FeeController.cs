@@ -43,6 +43,19 @@ namespace MS_App.Controllers
             return BadRequest("Some properties are not valid");
         }
 
+        [HttpDelete("GetFee")]
+        public async Task<IActionResult> GetFee(int CampusId, int SessionId, int SectionId, int ClassId)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await feeService.GetFeeAsync(CampusId, SessionId, SectionId, ClassId);
+                if (result.Status)
+                    return Ok(result);
+                return Ok(result);
+            }
+            return BadRequest("Some properties are not valid");
+        }
+
         [HttpPost("AddFeeStructure")]
         public async Task<IActionResult> AddFeeStructure(FeeStructureViewModel model)
         {
