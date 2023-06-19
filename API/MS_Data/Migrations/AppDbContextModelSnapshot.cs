@@ -125,122 +125,7 @@ namespace MS_Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MS_Models.Model.ApplicationRole", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Hidden")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles", (string)null);
-                });
-
-            modelBuilder.Entity("MS_Models.Model.ApplicationUser", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("LastName")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("OrgabizationName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("MS_Models.Model.EmailPlaceholder", b =>
+            modelBuilder.Entity("MS_Models.Common.EmailPlaceholder", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -266,7 +151,7 @@ namespace MS_Data.Migrations
                     b.ToTable("EmailPlaceholders");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.EmailTemplate", b =>
+            modelBuilder.Entity("MS_Models.Common.EmailTemplate", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -305,37 +190,7 @@ namespace MS_Data.Migrations
                     b.ToTable("EmailTemplates");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.Employee", b =>
-                {
-                    b.Property<int>("EmpID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmpID"), 1L, 1);
-
-                    b.Property<string>("Designation")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("JoiningDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Salary")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmpID");
-
-                    b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("MS_Models.Model.SessionLog", b =>
+            modelBuilder.Entity("MS_Models.Common.SessionLog", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -355,7 +210,121 @@ namespace MS_Data.Migrations
                     b.ToTable("SessionLog");
                 });
 
-            modelBuilder.Entity("MS_Models.Model.Student", b =>
+            modelBuilder.Entity("MS_Models.Model.ApplicationRole", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Hidden")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<int?>("OrgId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("MS_Models.Model.ApplicationUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Campus", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -363,13 +332,306 @@ namespace MS_Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Active")
+                    b.Property<string>("CampusName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ClassSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("OrganizationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassSectionId");
+
+                    b.HasIndex("OrganizationId")
+                        .IsUnique()
+                        .HasFilter("[OrganizationId] IS NOT NULL");
+
+                    b.ToTable("Campus");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Class", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClassName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ClassSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FeeStructureId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassSectionId");
+
+                    b.HasIndex("FeeStructureId");
+
+                    b.ToTable("Class");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.ClassSection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Fee")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsFeeStructure")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClassSections");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Enrollments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AddmissionDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RollNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId")
+                        .IsUnique()
+                        .HasFilter("[StudentId] IS NOT NULL");
+
+                    b.ToTable("Enrollments");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.FeeStructure", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Fee")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FeeStructures");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Organization", b =>
+                {
+                    b.Property<int>("OrgId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrgId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OrgName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("Phone")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("OrgId");
+
+                    b.ToTable("Organizations");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Section", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ClassSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FeeStructureId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SectionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassSectionId");
+
+                    b.HasIndex("FeeStructureId");
+
+                    b.ToTable("Sections");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Session", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ClassSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("FeeStructureId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SessionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassSectionId");
+
+                    b.HasIndex("FeeStructureId");
+
+                    b.ToTable("Sessions");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.StudentDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("FaherCnic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FatherEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FatherName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FatherOccupation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FatherProfession")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Guardian")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianCnic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianOccupation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuardianProfession")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HomeAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MotherCnic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MotherName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MotherProfession")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("ParentContactNumber")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId")
+                        .IsUnique()
+                        .HasFilter("[StudentId] IS NOT NULL");
+
+                    b.ToTable("StudentDetails");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Students", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ClassSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DOB")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DOJ")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -378,158 +640,32 @@ namespace MS_Data.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsAtive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNo")
+                    b.Property<long?>("PhoneNo")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("PrieviousSchool")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RollNo")
+                    b.Property<string>("Religion")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClassSectionId");
 
                     b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.ManyToMany.Book", b =>
-                {
-                    b.Property<int>("BookId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"), 1L, 1);
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("BookId");
-
-                    b.ToTable("Books");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.ManyToMany.BookCategory", b =>
-                {
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BookId", "CategoryId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("BookCategories");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.ManyToMany.Category", b =>
-                {
-                    b.Property<int>("CategoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
-
-                    b.Property<string>("CategoryName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.OneToMany.Company", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Companies");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.OneToMany.Worker", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("CompanyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.ToTable("Workers");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.OneToOne.Customer", b =>
-                {
-                    b.Property<int>("CustomerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"), 1L, 1);
-
-                    b.Property<string>("EmailAddress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CustomerId");
-
-                    b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("MS_Models.Relations.OneToOne.PostalAddress", b =>
-                {
-                    b.Property<int>("PostalAddressId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostalAddressId"), 1L, 1);
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StreetAddress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ZipCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PostalAddressId");
-
-                    b.HasIndex("CustomerId")
-                        .IsUnique();
-
-                    b.ToTable("PostalAddress");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -583,63 +719,125 @@ namespace MS_Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.ManyToMany.BookCategory", b =>
+            modelBuilder.Entity("MS_Models.Model.Campus", b =>
                 {
-                    b.HasOne("MS_Models.Relations.ManyToMany.Book", "Book")
-                        .WithMany("BookCategories")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
+                        .WithMany("CampusId")
+                        .HasForeignKey("ClassSectionId");
 
-                    b.HasOne("MS_Models.Relations.ManyToMany.Category", "Category")
-                        .WithMany("BookCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("MS_Models.Model.Organization", "Organization")
+                        .WithOne("Campus")
+                        .HasForeignKey("MS_Models.Model.Campus", "OrganizationId");
 
-                    b.Navigation("Book");
+                    b.Navigation("ClassSection");
 
-                    b.Navigation("Category");
+                    b.Navigation("Organization");
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.OneToMany.Worker", b =>
+            modelBuilder.Entity("MS_Models.Model.Class", b =>
                 {
-                    b.HasOne("MS_Models.Relations.OneToMany.Company", "Company")
-                        .WithMany("Workers")
-                        .HasForeignKey("CompanyId");
+                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
+                        .WithMany("ClassId")
+                        .HasForeignKey("ClassSectionId");
 
-                    b.Navigation("Company");
+                    b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
+                        .WithMany("ClassId")
+                        .HasForeignKey("FeeStructureId");
+
+                    b.Navigation("ClassSection");
+
+                    b.Navigation("FeeStructure");
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.OneToOne.PostalAddress", b =>
+            modelBuilder.Entity("MS_Models.Model.Enrollments", b =>
                 {
-                    b.HasOne("MS_Models.Relations.OneToOne.Customer", "Customer")
-                        .WithOne("Address")
-                        .HasForeignKey("MS_Models.Relations.OneToOne.PostalAddress", "CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("MS_Models.Model.Students", "Students")
+                        .WithOne("Enrollments")
+                        .HasForeignKey("MS_Models.Model.Enrollments", "StudentId");
 
-                    b.Navigation("Customer");
+                    b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.ManyToMany.Book", b =>
+            modelBuilder.Entity("MS_Models.Model.Section", b =>
                 {
-                    b.Navigation("BookCategories");
+                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
+                        .WithMany("SectionId")
+                        .HasForeignKey("ClassSectionId");
+
+                    b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
+                        .WithMany("SectionId")
+                        .HasForeignKey("FeeStructureId");
+
+                    b.Navigation("ClassSection");
+
+                    b.Navigation("FeeStructure");
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.ManyToMany.Category", b =>
+            modelBuilder.Entity("MS_Models.Model.Session", b =>
                 {
-                    b.Navigation("BookCategories");
+                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
+                        .WithMany("SessionId")
+                        .HasForeignKey("ClassSectionId");
+
+                    b.HasOne("MS_Models.Model.FeeStructure", "FeeStructure")
+                        .WithMany("SessionId")
+                        .HasForeignKey("FeeStructureId");
+
+                    b.Navigation("ClassSection");
+
+                    b.Navigation("FeeStructure");
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.OneToMany.Company", b =>
+            modelBuilder.Entity("MS_Models.Model.StudentDetail", b =>
                 {
-                    b.Navigation("Workers");
+                    b.HasOne("MS_Models.Model.Students", "Students")
+                        .WithOne("StudentDetail")
+                        .HasForeignKey("MS_Models.Model.StudentDetail", "StudentId");
+
+                    b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("MS_Models.Relations.OneToOne.Customer", b =>
+            modelBuilder.Entity("MS_Models.Model.Students", b =>
                 {
-                    b.Navigation("Address");
+                    b.HasOne("MS_Models.Model.ClassSection", "ClassSection")
+                        .WithMany("StudentId")
+                        .HasForeignKey("ClassSectionId");
+
+                    b.Navigation("ClassSection");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.ClassSection", b =>
+                {
+                    b.Navigation("CampusId");
+
+                    b.Navigation("ClassId");
+
+                    b.Navigation("SectionId");
+
+                    b.Navigation("SessionId");
+
+                    b.Navigation("StudentId");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.FeeStructure", b =>
+                {
+                    b.Navigation("ClassId");
+
+                    b.Navigation("SectionId");
+
+                    b.Navigation("SessionId");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Organization", b =>
+                {
+                    b.Navigation("Campus");
+                });
+
+            modelBuilder.Entity("MS_Models.Model.Students", b =>
+                {
+                    b.Navigation("Enrollments");
+
+                    b.Navigation("StudentDetail");
                 });
 #pragma warning restore 612, 618
         }
