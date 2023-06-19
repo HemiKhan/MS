@@ -5921,14 +5921,6 @@
       "PackagePath": "staticwebassets\\assets\\libs\\parsleyjs\\parsley.min.js"
     },
     {
-      "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\pdfmake\\build\\pdfmake.min.js",
-      "PackagePath": "staticwebassets\\assets\\libs\\pdfmake\\build\\pdfmake.min.js"
-    },
-    {
-      "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\pdfmake\\build\\vfs_fonts.js",
-      "PackagePath": "staticwebassets\\assets\\libs\\pdfmake\\build\\vfs_fonts.js"
-    },
-    {
       "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\pdfmake\\webpack-standardfonts.config.js",
       "PackagePath": "staticwebassets\\assets\\libs\\pdfmake\\webpack-standardfonts.config.js"
     },
@@ -7091,14 +7083,6 @@
     {
       "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\tinymce\\tinymce.min.js",
       "PackagePath": "staticwebassets\\assets\\libs\\tinymce\\tinymce.min.js"
-    },
-    {
-      "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\toastr\\build\\toastr.min.css",
-      "PackagePath": "staticwebassets\\assets\\libs\\toastr\\build\\toastr.min.css"
-    },
-    {
-      "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\toastr\\build\\toastr.min.js",
-      "PackagePath": "staticwebassets\\assets\\libs\\toastr\\build\\toastr.min.js"
     },
     {
       "Id": "D:\\Hammas\\MS\\UI\\MS_UI\\wwwroot\\assets\\libs\\toastr\\demo.html",
