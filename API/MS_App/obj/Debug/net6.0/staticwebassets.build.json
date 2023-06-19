@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "ATAi0vQpERfvCKKSmlhYQ7rTBwCsvMACh9Udec7VITo=",
+  "Source": "MS_App",
+  "BasePath": "_content/MS_App",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MS_App\\wwwroot",
+      "Source": "MS_App",
+      "ContentRoot": "D:\\Hammas\\MS\\API\\MS_App\\wwwroot\\",
+      "BasePath": "_content/MS_App",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Hammas\\MS\\API\\MS_App\\wwwroot\\Files\\PDF\\pdffile.pdf",
+      "SourceId": "MS_App",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Hammas\\MS\\API\\MS_App\\wwwroot\\",
+      "BasePath": "_content/MS_App",
+      "RelativePath": "Files/PDF/pdffile.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\PDF\\pdffile.pdf"
+    },
+    {
+      "Identity": "D:\\Hammas\\MS\\API\\MS_App\\wwwroot\\Images\\Studens.xlsx",
+      "SourceId": "MS_App",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Hammas\\MS\\API\\MS_App\\wwwroot\\",
+      "BasePath": "_content/MS_App",
+      "RelativePath": "Images/Studens.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Studens.xlsx"
+    }
+  ]
+}
